@@ -1,4 +1,4 @@
 jdk:
   - openjdk11
 install:
-  - ./gradlew clean core:build populator:legacy:build publishToMavenLocal
+  - ./gradlew clean core:build populator:build publishToMavenLocal

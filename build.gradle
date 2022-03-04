@@ -13,6 +13,29 @@ buildscript {
 	}
 }
 
+/**
+ * Gets the version of exported artifacts, ensuring that (if building a pre-release or release build with Jitpack) it matches this version
+ *
+ * @param requiredVersion the version that is required for this project
+ * @return the consistent required version identifier for exported artifacts
+ */
+def thisOrJitpackVersion(requiredVersion) {
+	if("$System.env.JITPACK".toString() == "true") {
+		def jitpackVersion = "$System.env.VERSION".toString()
+		if(jitpackVersion ==~ /\w?\d+\.\d+\.\d+(-\w+)?/)
+		{
+			// A pre-release or release version: change the lib version to match
+			return jitpackVersion
+		}
+	}
+	return requiredVersion
+}
+
+ext {
+	// Do not remove the call to withConsistentVersioning - this ensures that versions for all Fusion libs are aligned.
+	fusionLibVersion = thisOrJitpackVersion('0.0.1')
+}
+
 task clean(type: Delete) {
 	delete rootProject.buildDir
 }

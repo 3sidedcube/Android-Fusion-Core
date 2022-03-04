@@ -19,13 +19,25 @@ The legacy implementation utilises [Retrofit](https://square.github.io/retrofit/
 ## Installation
 In order to utilise the core library in a project, add the following dependency to your `build.gradle` file:
 ```groovy
-    //TODO
+    implementation 'com.github.3sidedcube.Android-Fusion-Core:core:{versionCode}'
 ```
 To utilise the legacy display populator, add the following dependency:
 ```groovy
-    //TODO
+    implementation 'com.github.3sidedcube.Android-Fusion-Core:core:{versionCode}'
+```
+If you wish to utilise all modules in this repo, you can alternatively add the following dependency:
+```groovy
+    implementation 'com.github.3sidedcube:Android-Fusion-Core:{versionCode}'
 ```
 [JitPack](https://jitpack.io/) is used to provide the Fusion artifacts.
+As such, `{versionCode}` can be replaced with:
+
+- A specific commit, e.g `1a2b3c4d5e`
+- A specific branch's latest build, e.g `feature~jitpack-setup-SNAPSHOT`
+- A specific pre-release tag, e.g `1.0.0-rc1`
+- A specific release tag, e.g `1.0.0`
+
+It is recommended that you use this library at a specific release tag, to ensure that the library is in a stable state.
 
 ## Usage
 Demo apps for the usage of Fusion can be found in the other relevant modules.

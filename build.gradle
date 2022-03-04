@@ -32,7 +32,7 @@ def thisOrJitpackVersion(requiredVersion) {
 }
 
 ext {
-	// Do not remove the call to withConsistentVersioning - this ensures that versions for all Fusion libs are aligned.
+	// Do not remove the call to thisOrJitpackVersion - this ensures that versions for all generated artifacts are aligned.
 	fusionLibVersion = thisOrJitpackVersion('0.0.1')
 }
 

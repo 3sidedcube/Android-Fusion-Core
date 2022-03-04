@@ -31,7 +31,7 @@ Then, add the following dependency to your `build.gradle` file:
 ```
 To utilise the legacy display populator, add the following dependency:
 ```groovy
-    implementation 'com.github.3sidedcube.Android-Fusion-Core:core:{versionCode}'
+    implementation 'com.github.3sidedcube.Android-Fusion-Core:populator-legacy:{versionCode}'
 ```
 If you wish to utilise all modules in this repo, you can alternatively add the following dependency:
 ```groovy

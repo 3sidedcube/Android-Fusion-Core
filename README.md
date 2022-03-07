@@ -17,15 +17,34 @@ The Display Populator is responsible for transforming a link to a single page of
 The legacy implementation utilises [Retrofit](https://square.github.io/retrofit/) and [Gson](https://github.com/google/gson) to fetch pages from an API.
 
 ## Installation
-In order to utilise the core library in a project, add the following dependency to your `build.gradle` file:
+[JitPack](https://jitpack.io/) is used to provide the Fusion artifacts.
+In order to utilise the core library in a project, update your `settings.gradle` (or root project `build.gradle` on older projects) to include the Jitpack maven repository:
 ```groovy
-    //TODO
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+```
+Then, add the following dependency to your `build.gradle` file:
+```groovy
+    implementation 'com.github.3sidedcube.Android-Fusion-Core:core:{versionCode}'
 ```
 To utilise the legacy display populator, add the following dependency:
 ```groovy
-    //TODO
+    implementation 'com.github.3sidedcube.Android-Fusion-Core:populator-legacy:{versionCode}'
 ```
-[JitPack](https://jitpack.io/) is used to provide the Fusion artifacts.
+If you wish to utilise all modules in this repo, you can alternatively add the following dependency:
+```groovy
+    implementation 'com.github.3sidedcube:Android-Fusion-Core:{versionCode}'
+```
+As these builds are provided using Jitpack, `{versionCode}` can be replaced with:
+
+- A specific commit, e.g `1a2b3c4d5e`
+- A specific branch's latest build, e.g `feature~jitpack-setup-SNAPSHOT`
+- A specific pre-release tag, e.g `1.0.0-rc1`
+- A specific release tag, e.g `1.0.0`
+
+It is recommended that you use this library at a specific release tag, to ensure that the library is in a stable state.
 
 ## Usage
 Demo apps for the usage of Fusion can be found in the other relevant modules.

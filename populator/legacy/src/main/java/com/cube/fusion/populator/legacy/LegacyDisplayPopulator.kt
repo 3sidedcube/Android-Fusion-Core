@@ -5,6 +5,7 @@ import com.cube.fusion.core.display.FusionDisplayTarget
 import com.cube.fusion.core.display.FusionLoadingIndicator
 import com.cube.fusion.core.exception.UnsuccessfulResponseError
 import com.cube.fusion.core.model.Page
+import com.cube.fusion.core.resolver.ViewResolver
 import com.cube.fusion.populator.legacy.api.APIFactory
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.CoroutineScope
@@ -14,10 +15,12 @@ import kotlinx.coroutines.launch
 /**
  * [FusionDisplayPopulator] implementation recreating the behaviour of the Fusion library prior to the abstraction out of content loading logic
  *
+ * @property resolvers a collection of [ViewResolver]s for all of the views that need to be parsed
+ *
  * Created by JR Mitchell on 24/December/2021.
  * Copyright ® 3SidedCube. All rights reserved.
  */
-object LegacyDisplayPopulator : FusionDisplayPopulator {
+class LegacyDisplayPopulator(val resolvers: Collection<ViewResolver>) : FusionDisplayPopulator {
 	override fun populateDisplayFromUri(screenLink: String, target: FusionDisplayTarget, loadingIndicator: FusionLoadingIndicator) {
 		loadingIndicator.setLoadingState(true)
 		// Remove prefix from link if necessary
@@ -29,10 +32,9 @@ object LegacyDisplayPopulator : FusionDisplayPopulator {
 				loadingIndicator.setLoadingState(false)
 				if (response.isSuccessful) {
 					val mapper = ObjectMapper()
-					// TODO abstract view resolution logic & provide as constructor param
-					/*ViewHelper.viewResolvers.mapKeys {
-						mapper.registerSubtypes(it.value.resolveView())
-					}*/
+					resolvers.forEach {
+						mapper.registerSubtypes(it.resolveView())
+					}
 					return@runCatching mapper.readValue(response.body()!!.data.toString(), Page::class.java)
 				}
 				else {

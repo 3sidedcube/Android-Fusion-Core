@@ -32,4 +32,9 @@ android {
 }
 
 dependencies {
+	// Core Fusion dependency
+	implementation project(path: ':core')
+
+	// Kotlin Coroutines
+	implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
 }

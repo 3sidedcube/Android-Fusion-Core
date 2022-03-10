@@ -8,12 +8,12 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 /**
  * Representation of a font specification in which to display a piece of text
  *
+ * Created by Nikos Rapousis on 09/March/2021.
+ * Copyright ® 3SidedCube. All rights reserved.
+ *
  * @property name the name of the font to use, e.g. "Open Sans"
  * @property weight the weight of the font. See [Weight].
  * @property size the font size, in scalable pixels (sp)
- *
- * Created by Nikos Rapousis on 09/March/2021.
- * Copyright ® 3SidedCube. All rights reserved.
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)

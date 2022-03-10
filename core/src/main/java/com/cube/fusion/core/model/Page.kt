@@ -11,15 +11,15 @@ import kotlinx.parcelize.Parcelize
 /**
  * Representation of a single page of Fusion content
  *
+ * Created by Nikos Rapousis on 24/November/2020.
+ * Copyright ® 3SidedCube. All rights reserved.
+ *
  * @property class the class name of [Page] - used for JSON parsing
  * @property id the page's unique ID
  * @property slug identifying slug of the page
  * @property title the display title of the page
  * @property analyticsScreenView if relevant, the analytics screen event to send up when viewing this page
  * @property screen the screen of content to display in this page
- *
- * Created by Nikos Rapousis on 24/November/2020.
- * Copyright ® 3SidedCube. All rights reserved.
  */
 @Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)

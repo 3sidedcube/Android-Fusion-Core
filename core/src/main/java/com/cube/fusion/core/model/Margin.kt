@@ -7,13 +7,13 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 /**
  * Specification for the margin around a single Fusion view
  *
+ * Created by Nikos Rapousis on 08/March/2021.
+ * Copyright ® 3SidedCube. All rights reserved.
+ *
  * @property left the left margin in units of density pixels (dp)
  * @property top the top margin in units of density pixels (dp)
  * @property right the right margin in units of density pixels (dp)
  * @property bottom the bottom margin in units of density pixels (dp)
- *
- * Created by Nikos Rapousis on 08/March/2021.
- * Copyright ® 3SidedCube. All rights reserved.
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)

@@ -9,11 +9,11 @@ import kotlinx.parcelize.Parcelize
 /**
  * Specification for the size of a view
  *
- * @property width the width of the view, in density pixels (dp)
- * @property height the height of the view, in density pixels (dp)
- *
  * Created by Nikos Rapousis on 09/March/2021.
  * Copyright ® 3SidedCube. All rights reserved.
+ *
+ * @property width the width of the view, in density pixels (dp)
+ * @property height the height of the view, in density pixels (dp)
  */
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)

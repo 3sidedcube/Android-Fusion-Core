@@ -13,10 +13,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 /**
  * Interface representing an action to be associated with the click handling of a clickable view
  *
- * @property class the class name of the action - used for JSON parsing
- *
  * Created by Nikos Rapousis on 12/March/2021.
  * Copyright ® 3SidedCube. All rights reserved.
+ *
+ * @property class the class name of the action - used for JSON parsing
  */
 abstract class Action {
 	open val `class`: String = javaClass.simpleName

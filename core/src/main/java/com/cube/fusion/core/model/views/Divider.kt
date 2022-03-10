@@ -10,10 +10,10 @@ import kotlinx.parcelize.Parcelize
 /**
  * Model representing a Divider view for separating elements on a screen
  *
- * @property strokeWidth the [Float] height of the divider, in density pixels (dp)
- *
  * Created by Nikos Rapousis on 08/March/2021.
  * Copyright ® 3SidedCube. All rights reserved.
+ *
+ * @property strokeWidth the [Float] height of the divider, in density pixels (dp)
  */
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)

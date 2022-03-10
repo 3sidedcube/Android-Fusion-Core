@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 /**
  * Class representing the drop shadow displayed behind a view
  *
+ * Created by JR Mitchell on 10/November/2021.
+ * Copyright ® 3SidedCube. All rights reserved.
+ *
  * @property color the hexadecimal colour code for the shadow.
  *  Ensure that your chosen UI library uses the right hex format (e.g RGBA or ARGB)
  * @property alpha the display alpha of the shadow
@@ -16,9 +19,6 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  * @property y the y-offset of the shadow, in density pixels (dp)
  * @property blur the target gaussian blur factor for the shadow, in density pixels (dp)
  * @property spread the distance that the shadow should spread from the edge of the view, in density pixels (dp)
- *
- * Created by JR Mitchell on 10/November/2021.
- * Copyright ® 3SidedCube. All rights reserved.
  */
 class Shadow {
 	var color: String? = null

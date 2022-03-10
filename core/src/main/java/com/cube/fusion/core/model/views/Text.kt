@@ -12,6 +12,9 @@ import kotlinx.parcelize.Parcelize
 /**
  * Model representing a single piece of text
  *
+ * Created by Nikos Rapousis on 08/March/2021.
+ * Copyright ® 3SidedCube. All rights reserved.
+ *
  * @property textColor the hexadecimal colour code for the text colour.
  *  Ensure that your chosen UI library uses the right hex format (e.g RGBA or ARGB)
  * @property content the text content of the view
@@ -20,9 +23,6 @@ import kotlinx.parcelize.Parcelize
  * @property numberOfLines the number of lines to show the text in
  * @property lineHeight the height of a single line of text
  * @property letterSpacing the spacing between letters, in ems
- *
- * Created by Nikos Rapousis on 08/March/2021.
- * Copyright ® 3SidedCube. All rights reserved.
  */
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)

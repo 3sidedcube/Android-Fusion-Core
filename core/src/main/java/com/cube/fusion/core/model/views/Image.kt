@@ -11,10 +11,10 @@ import kotlinx.parcelize.Parcelize
 /**
  * Model representing a single image view
  *
- * @property src the source to load the image from
- *
  * Created by Nikos Rapousis on 09/March/2021.
  * Copyright ® 3SidedCube. All rights reserved.
+ *
+ * @property src the source to load the image from
  */
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)

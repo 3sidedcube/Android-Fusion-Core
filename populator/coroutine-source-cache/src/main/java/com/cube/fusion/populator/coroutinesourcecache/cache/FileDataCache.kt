@@ -15,9 +15,10 @@ import java.lang.ref.WeakReference
  * Copyright ® 3SidedCube. All rights reserved.
  *
  * @param context the context to initialise this cache from
+ * @param screenNameTransform a transformation to apply to the screen link to turn it into the cache file name
  * @param CachedType the type in which the data is cached
  */
-abstract class FileDataCache<CachedType>(context: Context, val suffix: String) : FusionDataCache<CachedType>() {
+abstract class FileDataCache<CachedType>(context: Context, val screenNameTransform: (String) -> String) : FusionDataCache<CachedType>() {
 	companion object {
 		private const val DEFAULT_CACHE_DIRECTORY = "fusionCache/"
 	}
@@ -51,7 +52,7 @@ abstract class FileDataCache<CachedType>(context: Context, val suffix: String) :
 		if (!dir.exists()) {
 			dir.mkdirs()
 		}
-		return File(getCacheDir(context), screenLink + suffix)
+		return File(getCacheDir(context), screenNameTransform(screenLink))
 	}
 
 	/**
@@ -83,7 +84,7 @@ abstract class FileDataCache<CachedType>(context: Context, val suffix: String) :
 	override suspend fun retrieve(screenLink: String): Result<CachedType> = runCatching {
 		contextRef.get()?.let { context ->
 			return@runCatching withContext(Dispatchers.IO) {
-				val file = getFile(context, screenLink + suffix)
+				val file = getFile(context, screenLink)
 				if (file.exists()) {
 					return@withContext readFromFile(file)
 				}

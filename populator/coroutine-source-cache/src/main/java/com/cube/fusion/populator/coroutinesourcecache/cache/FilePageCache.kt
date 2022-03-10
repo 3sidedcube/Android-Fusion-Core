@@ -15,8 +15,9 @@ import java.lang.ref.WeakReference
  * Copyright ® 3SidedCube. All rights reserved.
  *
  * @param context the context to initialise this cache from
+ * @param screenNameTransform a transformation to apply to the screen link to turn it into the cache file name
  */
-open class FilePageCache(context: Context, suffix: String, val resolvers: Collection<ViewResolver>) : FileDataCache<Page>(context, suffix) {
+open class FilePageCache(context: Context, screenNameTransform: (String) -> String, val resolvers: Collection<ViewResolver>) : FileDataCache<Page>(context, screenNameTransform) {
 	override fun writeToFile(file: File, data: Page) = resolvers.objectMapper().writeValue(file, data)
 	override fun readFromFile(file: File): Page = resolvers.objectMapper().readValue(file, Page::class.java)
 }

@@ -1,9 +1,6 @@
 package com.cube.fusion.populator.coroutinesourcecache.cache
 
 import android.content.Context
-import com.cube.fusion.core.model.Page
-import com.cube.fusion.core.resolver.ViewResolver
-import com.cube.fusion.core.utils.objectMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -11,15 +8,16 @@ import java.io.FileNotFoundException
 import java.lang.ref.WeakReference
 
 /**
- * [FusionDataCache] implementation to store pages as JSON files
+ * [FusionDataCache] implementation to store Fusion data as JSON files
  * Note that this keeps a [WeakReference] to the context, and so where possible, [updateContext] should be called before attempting to read or write
  *
  * Created by JR Mitchell on 10/March/2022.
  * Copyright ® 3SidedCube. All rights reserved.
  *
  * @param context the context to initialise this cache from
+ * @param CachedType the type in which the data is cached
  */
-open class FileDataCache(context: Context, val suffix: String, val resolvers: Collection<ViewResolver>) : FusionDataCache {
+abstract class FileDataCache<CachedType>(context: Context, val suffix: String) : FusionDataCache<CachedType>() {
 	companion object {
 		private const val DEFAULT_CACHE_DIRECTORY = "fusionCache/"
 	}
@@ -56,21 +54,38 @@ open class FileDataCache(context: Context, val suffix: String, val resolvers: Co
 		return File(getCacheDir(context), screenLink + suffix)
 	}
 
-	override suspend fun cache(screenLink: String, page: Page) {
+	/**
+	 * Writes some [CachedType] data to a given [File]
+	 *
+	 * @param file the file to write data to
+	 * @param data the data to write to the [file]
+	 */
+	abstract fun writeToFile(file: File, data: CachedType)
+
+	/**
+	 * Reads some [CachedType] data from a given [File]
+	 *
+	 * @param file the file to read data from.
+	 *  You should not need to check that the file exists.
+	 * @return the [CachedType] data stored in that file
+	 */
+	abstract fun readFromFile(file: File): CachedType
+
+	override suspend fun cache(screenLink: String, data: CachedType) {
 		contextRef.get()?.let { context ->
 			withContext(Dispatchers.IO) {
 				val file = getFile(context, screenLink)
-				resolvers.objectMapper().writeValue(file, page)
+				writeToFile(file, data)
 			}
 		}
 	}
 
-	override suspend fun retrieve(screenLink: String): Result<Page> = runCatching {
+	override suspend fun retrieve(screenLink: String): Result<CachedType> = runCatching {
 		contextRef.get()?.let { context ->
 			return@runCatching withContext(Dispatchers.IO) {
 				val file = getFile(context, screenLink + suffix)
 				if (file.exists()) {
-					return@withContext resolvers.objectMapper().readValue(file, Page::class.java)
+					return@withContext readFromFile(file)
 				}
 				throw FileNotFoundException()
 			}

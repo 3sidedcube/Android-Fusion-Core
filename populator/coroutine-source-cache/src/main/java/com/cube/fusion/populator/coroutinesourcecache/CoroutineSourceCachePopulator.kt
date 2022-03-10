@@ -23,8 +23,8 @@ import kotlinx.coroutines.launch
  * @param sources the collection of sources to attempt to fetch / cache data in.
  *  Be aware that they will be checked in collection order.
  */
-class CoroutineSourceCachePopulator(val scopeFactory: () -> CoroutineScope, val sources: Collection<FusionDataSource>) : FusionDisplayPopulator {
-	constructor(scopeFactory: () -> CoroutineScope, vararg sources: FusionDataSource): this(scopeFactory, sources.toList())
+class CoroutineSourceCachePopulator(val scopeFactory: () -> CoroutineScope, val sources: Collection<FusionDataSource<Page>>) : FusionDisplayPopulator {
+	constructor(scopeFactory: () -> CoroutineScope, vararg sources: FusionDataSource<Page>): this(scopeFactory, sources.toList())
 	override fun populateDisplayFromUri(screenLink: String, target: FusionDisplayTarget, loadingIndicator: FusionLoadingIndicator) {
 		loadingIndicator.setLoadingState(true)
 		scopeFactory().launch(Dispatchers.Main) {
@@ -46,7 +46,7 @@ class CoroutineSourceCachePopulator(val scopeFactory: () -> CoroutineScope, val 
 					if (staticPage == null) {
 						source.retrieve(screenLink).fold(onSuccess, onFailure)
 					}
-					else if (source is FusionDataCache) {
+					else if (source is FusionDataCache<Page>) {
 						source.cache(screenLink, staticPage)
 					}
 				}

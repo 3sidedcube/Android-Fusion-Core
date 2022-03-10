@@ -22,7 +22,10 @@ open class RetrofitDataSource<DataType>(val baseUrl: String, val resolvers: Coll
 	private fun api() = RetrofitAPI.getAPI(baseUrl)
 	override suspend fun retrieve(screenLink: String): Result<DataType> = runCatching {
 		return@runCatching withContext(Dispatchers.IO) {
-			val stream = api().getContentByLink(screenLink).byteStream()
+			// Remove base URL from link if necessary
+			val unqualifiedLink = screenLink.removePrefix(baseUrl)
+			// Get content
+			val stream = api().getContentByLink(unqualifiedLink).byteStream()
 			resolvers.objectMapper().readValue(stream, clazz) ?: throw Throwable()
 		}
 	}

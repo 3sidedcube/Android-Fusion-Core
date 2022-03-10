@@ -35,6 +35,15 @@ dependencies {
 	// Core Fusion dependency
 	implementation project(path: ':core')
 
+	//.Utilises coroutine cache
+	implementation project(path: ':populator:coroutine-source-cache')
+
+	// Kotlin Coroutines
+	implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+
 	// API calls
 	implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+	// Handling of JSON data with Jackson
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
 }

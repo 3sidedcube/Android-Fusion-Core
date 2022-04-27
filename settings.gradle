@@ -10,3 +10,4 @@ rootProject.name = "Android-Fusion-Core"
 include ':core'
 include ':populator:legacy'
 include ':populator:coroutine-source-cache'
+include ':populator:retrofit'

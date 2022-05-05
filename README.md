@@ -12,9 +12,12 @@ The Core module contains all of the basic models defined in the Fusion JSON sche
 It also contains interfaces that are used by inheriting modules to define the way in which they interact.
 This allows a separation of concerns so that Fusion components can be swapped out when necessary.
 
-The Core module repo also currently contains the legacy Display Populator implementation.
+The Core module repo also currently contains the modules for display population.
 The Display Populator is responsible for transforming a link to a single page of Fusion data into a complete Java object representation of that page.
-The legacy implementation utilises [Retrofit](https://square.github.io/retrofit/) and [Gson](https://github.com/google/gson) to fetch pages from an API.
+The `legacy` implementation utilises [Retrofit](https://square.github.io/retrofit/) and [Gson](https://github.com/google/gson) to fetch pages from an API.
+The `coroutine-source-cache` implementation utilises Kotlin's coroutines to fetch pages from data sources.
+The `retrofit` implementation extends `coroutine-source-cache` to use [Retrofit](https://square.github.io/retrofit/) to fetch pages from an API.
+Note that the `retrofit` module depends on `coroutine-source-cache`, and therefore if using it, you may need to install both in order to build correctly.
 
 ## Installation
 [JitPack](https://jitpack.io/) is used to provide the Fusion artifacts.
@@ -29,9 +32,13 @@ Then, add the following dependency to your `build.gradle` file:
 ```groovy
     implementation 'com.github.3sidedcube.Android-Fusion-Core:core:{versionCode}'
 ```
-To utilise the legacy display populator, add the following dependency:
+To utilise a populator module, add the following dependency:
 ```groovy
-    implementation 'com.github.3sidedcube.Android-Fusion-Core:populator-legacy:{versionCode}'
+    implementation 'com.github.3sidedcube.Android-Fusion-Core:populator-{populatorName}:{versionCode}'
+```
+e.g
+```groovy
+    implementation 'com.github.3sidedcube.Android-Fusion-Core:populator-coroutine-source-cache:{versionCode}'
 ```
 If you wish to utilise all modules in this repo, you can alternatively add the following dependency:
 ```groovy

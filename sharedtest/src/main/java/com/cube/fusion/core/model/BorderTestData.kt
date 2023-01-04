@@ -27,6 +27,7 @@ object BorderTestData {
 	 * An instance of [Border] expected to match the parsed value of [COMPLETE_BORDER_JSON]
 	 */
 	val COMPLETE_BORDER = Border(
-		// TODO: Update Border with a non-default constructor
+		strokeWidth = 2.4f,
+		color = "#CCEEFF"
 	)
 }

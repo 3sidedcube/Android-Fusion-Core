@@ -2,6 +2,7 @@ package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.ModelTestData
+import com.cube.fusion.core.model.ModelTestData.withCompleteModelProperties
 import com.cube.fusion.core.resolver.TrivialViewResolver
 import com.cube.fusion.core.resolver.ViewResolver
 
@@ -45,8 +46,16 @@ object ScreenTestData {
 	 * An instance of [Screen] expected to match the parsed value of [COMPLETE_SCREEN_JSON]
 	 */
 	val COMPLETE_SCREEN = Screen(
-		// TODO: Update Screen with a non-default constructor
-	)
+		mutableListOf(
+			BulletGroupTestData.COMPLETE_BULLET_GROUP,
+			BulletTestData.COMPLETE_BULLET,
+			ButtonTestData.COMPLETE_BUTTON,
+			DividerTestData.COMPLETE_DIVIDER,
+			ImageTestData.COMPLETE_IMAGE,
+			ListItemTestData.COMPLETE_LIST_ITEM,
+			TextTestData.COMPLETE_TEXT
+		)
+	).withCompleteModelProperties()
 
 	/**
 	 * The required view resolvers to deserialise [COMPLETE_SCREEN_JSON]

@@ -32,6 +32,7 @@ object LinkActionTestData {
 	 * An instance of [LinkAction] expected to match the parsed value of [COMPLETE_LINK_ACTION_JSON]
 	 */
 	val COMPLETE_LINK_ACTION = LinkAction(
-		// TODO: Update LinkAction with a non-default constructor
+		link = "www.google.com",
+		inApp = true
 	)
 }

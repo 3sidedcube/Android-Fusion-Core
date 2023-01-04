@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -24,14 +25,12 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
-class Page : Parcelable {
-	val `class` = "Page"
-	val id: String = ""
-	val slug: String = ""
-	val title: String = ""
-
-	@JsonProperty("analytics_screen_view")
-	var analyticsScreenView: String? = null
+class Page(
+	val id: String = "",
+	val slug: String = "",
+	val title: String = "",
+	@field:JsonProperty("analytics_screen_view") var analyticsScreenView: String? = null,
 	var screen: Screen? = null
-
+) : Parcelable {
+	@IgnoredOnParcel val `class` = "Page"
 }

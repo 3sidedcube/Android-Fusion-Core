@@ -20,11 +20,11 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  * @property blur the target gaussian blur factor for the shadow, in density pixels (dp)
  * @property spread the distance that the shadow should spread from the edge of the view, in density pixels (dp)
  */
-class Shadow {
-	var color: String? = null
-	var alpha: Float = 1f
-	var x: Float = 0f
-	var y: Float = 0f
-	var blur: Float = 0f
-	var spread: Float = 0f
-}
+class Shadow(
+	val color: String? = null,
+	val alpha: Float = 1f,
+	val x: Float = 0f,
+	val y: Float = 0f,
+	val blur: Float = 0f,
+	val spread: Float = 0f
+)

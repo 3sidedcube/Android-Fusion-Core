@@ -18,6 +18,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Divider : Model(), Parcelable {
-	var strokeWidth: Float? = null
-}
+class Divider (
+	val strokeWidth: Float? = null
+) : Model(), Parcelable

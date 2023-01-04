@@ -1,6 +1,5 @@
 package com.cube.fusion.core.model.views
 
-import android.os.Parcelable
 import com.cube.fusion.core.model.Model
 import com.cube.fusion.core.model.action.Action
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
@@ -27,4 +26,4 @@ class ListItem(
 	val title: Text? = null,
 	val subtitle: Text? = null,
 	val action: Action? = null
-) : Model(), Parcelable
+) : Model()

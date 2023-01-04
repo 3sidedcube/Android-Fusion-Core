@@ -1,6 +1,5 @@
 package com.cube.fusion.core.model.views
 
-import android.os.Parcelable
 import com.cube.fusion.core.model.ImageSource
 import com.cube.fusion.core.model.Model
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
@@ -21,4 +20,4 @@ import kotlinx.parcelize.Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Image (
 	val src: ImageSource? = null
-) : Model(), Parcelable
+) : Model()

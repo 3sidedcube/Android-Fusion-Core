@@ -1,6 +1,5 @@
 package com.cube.fusion.core.model.views
 
-import android.os.Parcelable
 import com.cube.fusion.core.model.Model
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
@@ -20,4 +19,4 @@ import kotlinx.parcelize.Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Divider (
 	val strokeWidth: Float? = null
-) : Model(), Parcelable
+) : Model()

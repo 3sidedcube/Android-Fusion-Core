@@ -1,6 +1,5 @@
 package com.cube.fusion.core.model.views
 
-import android.os.Parcelable
 import com.cube.fusion.core.model.Font
 import com.cube.fusion.core.model.Model
 import com.cube.fusion.core.model.TextAlignment
@@ -35,4 +34,4 @@ open class Text (
 	var numberOfLines: Int? = null,
 	var lineHeight: Float? = null,
 	var letterSpacing: Float? = null
-)  : Model(), Parcelable
+)  : Model()

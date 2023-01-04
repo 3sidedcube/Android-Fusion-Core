@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 
 /**
  * Model representing a single piece of text
@@ -27,23 +28,12 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-open class Text : Model(), Parcelable {
-	var textColor: String? = null
-
-	var content: String? = null
-
-	// `Font` style of the text
-	var font: Font? = null
-
-	// `TextAlignment`
-	var textAlignment: TextAlignment? = null
-
-	// Number of lines to show this text in
-	var numberOfLines: Int? = null
-
-	// Height of the line
-	var lineHeight: Float? = null
-
-	// Letter spacing
-	var letterSpacing: Float? = null
-}
+open class Text (
+	val textColor: String? = null,
+	val content: String? = null,
+	val font: @RawValue Font? = null,
+	val textAlignment: TextAlignment? = null,
+	val numberOfLines: Int? = null,
+	val lineHeight: Float? = null,
+	val letterSpacing: Float? = null
+)  : Model(), Parcelable

@@ -3,6 +3,8 @@ package com.cube.fusion.core.model.views
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.FontTestData
 import com.cube.fusion.core.model.ModelTestData
+import com.cube.fusion.core.model.ModelTestData.withCompleteModelProperties
+import com.cube.fusion.core.model.TextAlignment
 
 /**
  * Object containing useful data for [Text] test cases, for both JVM and instrumented tests
@@ -27,13 +29,13 @@ object TextTestData {
 	val COMPLETE_TEXT_JSON = """
 		{
 			"class": "Text",
-			"textColor": "#EEDDCC",
+			"text_color": "#EEDDCC",
 			"content": "TextContent",
 			"font": ${FontTestData.COMPLETE_FONT_JSON},
-			"textAlignment": "center",
-			"numberOfLines": 6,
-			"lineHeight": 5.2,
-			"letterSpacing": 3.33,
+			"text_alignment": "center",
+			"number_of_lines": 6,
+			"line_height": 5.2,
+			"letter_spacing": 3.33,
 			${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
 		}
 	""".trimIndent()
@@ -42,6 +44,12 @@ object TextTestData {
 	 * An instance of [Text] expected to match the parsed value of [COMPLETE_TEXT_JSON]
 	 */
 	val COMPLETE_TEXT = Text(
-		// TODO: Update Text with a non-default constructor
-	)
+		textColor = "#EEDDCC",
+		content = "TextContent",
+		font = FontTestData.COMPLETE_FONT,
+		textAlignment = TextAlignment.CENTER,
+		numberOfLines = 6,
+		lineHeight = 5.2f,
+		letterSpacing = 3.33f
+	).withCompleteModelProperties()
 }

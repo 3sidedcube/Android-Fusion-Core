@@ -1,11 +1,14 @@
 package com.cube.fusion.core.model
 
+import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import kotlinx.parcelize.Parcelize
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Parcelize
 /**
  * Class representing the drop shadow displayed behind a view
  *
@@ -27,4 +30,4 @@ class Shadow(
 	val y: Float = 0f,
 	val blur: Float = 0f,
 	val spread: Float = 0f
-)
+) : Parcelable

@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import kotlinx.parcelize.Parcelize
-import kotlinx.parcelize.RawValue
 
 /**
  * Model representing a single piece of text
@@ -31,7 +30,7 @@ import kotlinx.parcelize.RawValue
 open class Text (
 	var textColor: String? = null,
 	var content: String? = null,
-	var font: @RawValue Font? = null,
+	var font: Font? = null,
 	var textAlignment: TextAlignment? = null,
 	var numberOfLines: Int? = null,
 	var lineHeight: Float? = null,

@@ -20,7 +20,7 @@ object UrlLinkTestData {
 		{
 			"id": "page_id",
 			"title": "My Page",
-			"apiUrl": "page_url"
+			"api_url": "page_url"
 		}
 	""".trimIndent()
 
@@ -28,6 +28,8 @@ object UrlLinkTestData {
 	 * An instance of [UrlLink] expected to match the parsed value of [COMPLETE_URL_LINK_JSON]
 	 */
 	val COMPLETE_URL_LINK = UrlLink(
-		// TODO: Update UrlLink with a non-default constructor
+		id = "page_id",
+		title = "My Page",
+		apiUrl = "page_url"
 	)
 }

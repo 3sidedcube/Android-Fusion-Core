@@ -27,4 +27,13 @@ class PaddingJVMTests {
 		PaddingTestData.COMPLETE_PADDING,
 		PaddingTestData.COMPLETE_PADDING_JSON
 	)
+	
+	/**
+	 * Test that the relevant JSON data for a [Padding] instance with zero margin matches the zero margin method
+	 */
+	@Test
+	fun testZeroPaddingDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		Padding.zeroPadding(),
+		PaddingTestData.ZERO_PADDING_JSON
+	)
 }

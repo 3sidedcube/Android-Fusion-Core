@@ -26,6 +26,18 @@ object PaddingTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to parse to [Padding.zeroPadding]
+	 */
+	val ZERO_PADDING_JSON = """
+		{
+			"left": 0,
+			"top": 0,
+			"right": 0,
+			"bottom": 0
+		}
+	""".trimIndent()
+
+	/**
 	 * An instance of [Padding] expected to match the parsed value of [COMPLETE_PADDING_JSON]
 	 */
 	val COMPLETE_PADDING = Padding(

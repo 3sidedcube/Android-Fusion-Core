@@ -13,11 +13,24 @@ object ModelTestData {
 	val COMPLETE_MODEL_JSON = """
 		{
 			"background_color": "#FFEEDD",
-			"cornerRadius": 3.2,
+			"corner_radius": 3.2,
 			"padding": ${PaddingTestData.COMPLETE_PADDING_JSON},
 			"margin": ${MarginTestData.COMPLETE_MARGIN_JSON},
 			"border": ${BorderTestData.COMPLETE_BORDER_JSON},
 			"shadow": ${ShadowTestData.COMPLETE_SHADOW_JSON}
 		}
 	""".trimIndent()
+
+	/**
+	 * Temporary method for applying base model properties to a class that inherits model
+	 * TODO remove; rework to use encapsulation rather than inheritance for these properties
+	 */
+	inline fun <reified T : Model> T.withCompleteModelProperties() = apply {
+		backgroundColor = "#FFEEDD"
+		cornerRadius = 3.2f
+		padding = PaddingTestData.COMPLETE_PADDING
+		margin = MarginTestData.COMPLETE_MARGIN
+		border = BorderTestData.COMPLETE_BORDER
+		shadow = ShadowTestData.COMPLETE_SHADOW
+	}
 }

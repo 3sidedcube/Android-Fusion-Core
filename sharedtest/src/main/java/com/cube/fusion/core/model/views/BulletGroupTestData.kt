@@ -3,8 +3,10 @@ package com.cube.fusion.core.model.views
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.FontTestData
 import com.cube.fusion.core.model.ModelTestData
-import com.cube.fusion.core.resolver.ViewResolver
+import com.cube.fusion.core.model.ModelTestData.withCompleteModelProperties
+import com.cube.fusion.core.model.TextAlignment
 import com.cube.fusion.core.resolver.TrivialViewResolver
+import com.cube.fusion.core.resolver.ViewResolver
 
 /**
  * Object containing useful data for [BulletGroup] test cases, for both JVM and instrumented tests
@@ -35,24 +37,24 @@ object BulletGroupTestData {
 					"class": "Bullet",
 					"title": {
 						"class": "Text",
-						"textColor": "#ADEECC",
+						"text_color": "#ADEECC",
 						"content": "BulletTitle2TextContent",
 						"font": ${FontTestData.COMPLETE_FONT_JSON},
-						"textAlignment": "right",
-						"numberOfLines": 81,
-						"lineHeight": 2.23,
-						"letterSpacing": 1.11,
+						"text_alignment": "right",
+						"number_of_lines": 81,
+						"line_height": 2.23,
+						"letter_spacing": 1.11,
 						${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
 					},
 					"subtitle": {
 						"class": "Text",
-						"textColor": "#DDEECC",
+						"text_color": "#DDEECC",
 						"content": "BulletSubtitle2TextContent",
 						"font": ${FontTestData.COMPLETE_FONT_JSON},
-						"textAlignment": "justified",
-						"numberOfLines": 33,
-						"lineHeight": 7.19,
-						"letterSpacing": 92.88,
+						"text_alignment": "justified",
+						"number_of_lines": 33,
+						"line_height": 7.19,
+						"letter_spacing": 92.88,
 						${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
 					},
 					"order": 32,
@@ -67,8 +69,31 @@ object BulletGroupTestData {
 	 * An instance of [BulletGroup] expected to match the parsed value of [COMPLETE_BULLET_GROUP_JSON]
 	 */
 	val COMPLETE_BULLET_GROUP = BulletGroup(
-		// TODO: Update BulletGroup with a non-default constructor
-	)
+		children = arrayListOf(
+			BulletTestData.COMPLETE_BULLET,
+			Bullet(
+				title = Text(
+					textColor = "#ADEECC",
+					content = "BulletTitle2TextContent",
+					font = FontTestData.COMPLETE_FONT,
+					textAlignment = TextAlignment.END,
+					numberOfLines = 81,
+					lineHeight = 2.23f,
+					letterSpacing = 1.11f,
+				).withCompleteModelProperties(),
+				subtitle = Text(
+					textColor = "#DDEECC",
+					content = "BulletSubtitle2TextContent",
+					font = FontTestData.COMPLETE_FONT,
+					textAlignment = TextAlignment.JUSTIFIED,
+					numberOfLines = 33,
+					lineHeight = 7.19f,
+					letterSpacing = 92.88f
+				).withCompleteModelProperties(),
+				order = 32
+			).withCompleteModelProperties()
+		)
+	).withCompleteModelProperties()
 
 	/**
 	 * The required view resolvers to deserialise [COMPLETE_BULLET_GROUP_JSON]

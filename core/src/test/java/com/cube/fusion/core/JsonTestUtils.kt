@@ -1,6 +1,5 @@
 package com.cube.fusion.core
 
-import com.cube.fusion.core.model.Model
 import com.cube.fusion.core.resolver.ViewResolver
 import com.cube.fusion.core.utils.objectMapper
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -14,31 +13,17 @@ import org.assertj.core.api.Assertions
  */
 object JsonTestUtils {
 	/**
-	 * Assert that a [Model] is equal to the JSON deserialisation of its JSON data
+	 * Assert that an object is equal to the JSON deserialisation of its JSON data
 	 *
-	 * @param T the type of the object to deserialise
-	 * @param inObj the expected [T] that [inStr] should deserialise to
-	 * @param inStr the JSON representation of [inObj]
+	 * @param T The type of the object to deserialise.
+	 * @param inObj The expected [T] that [inStr] should deserialise to.
+	 * @param inStr The JSON representation of [inObj].
+	 * @param resolvers The list of view resolvers to use for deserialisation, if necessary.
 	 */
-	inline fun <reified T : Model> assertEqualityFromResolvedJsonDeserialisation(inObj: T, inStr: String)
+	inline fun <reified T> assertEqualityFromJsonDeserialisation(inObj: T, inStr: String, resolvers: List<ViewResolver>? = null)
 	{
-		val resolver = object : ViewResolver {
-			override fun resolveView(): Class<out Model?> = T::class.java
-		}
-		val readObj = listOf(resolver).objectMapper().readValue(inStr, T::class.java)
-		Assertions.assertThat(readObj).usingRecursiveComparison().isEqualTo(inObj)
-	}
-
-	/**
-	 * Assert that a non-[Model] object is equal to the JSON deserialisation of its JSON data
-	 *
-	 * @param T the type of the object to deserialise
-	 * @param inObj the expected [T] that [inStr] should deserialise to
-	 * @param inStr the JSON representation of [inObj]
-	 */
-	inline fun <reified T> assertEqualityFromJsonDeserialisation(inObj: T, inStr: String)
-	{
-		val readObj = ObjectMapper().readValue(inStr, T::class.java)
+		val mapper = resolvers?.objectMapper() ?: ObjectMapper()
+		val readObj = mapper.readValue(inStr, T::class.java)
 		Assertions.assertThat(readObj).usingRecursiveComparison().isEqualTo(inObj)
 	}
 }

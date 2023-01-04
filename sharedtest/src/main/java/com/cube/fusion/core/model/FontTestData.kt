@@ -28,6 +28,8 @@ object FontTestData {
 	 * An instance of [Font] expected to match the parsed value of [COMPLETE_FONT_JSON]
 	 */
 	val COMPLETE_FONT = Font(
-		// TODO: Update Font with a non-default constructor
+		name = "Open Sans",
+		weight = Font.Weight.REGULAR,
+		size = 22f
 	)
 }

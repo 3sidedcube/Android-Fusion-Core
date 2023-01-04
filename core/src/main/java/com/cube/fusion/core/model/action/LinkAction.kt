@@ -16,9 +16,10 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class LinkAction : Action() {
-	var link: String? = null
+class LinkAction(
+	var link: String? = null,
 	var inApp: Boolean = false
+) : Action() {
 	override fun extractClick(): String? {
 		return link
 	}

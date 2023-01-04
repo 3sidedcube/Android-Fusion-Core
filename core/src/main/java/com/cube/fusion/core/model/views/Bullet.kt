@@ -17,8 +17,8 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Bullet : Model(), Parcelable {
-	val title: Text? = null
-	val subtitle: Text? = null
+class Bullet(
+	val title: Text? = null,
+	val subtitle: Text? = null,
 	var order: Int = 0
-}
+) : Model(), Parcelable

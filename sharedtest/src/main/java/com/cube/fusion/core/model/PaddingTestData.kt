@@ -21,7 +21,7 @@ object PaddingTestData {
 			"left": 31,
 			"top": 3.63,
 			"right": 600,
-			"bottom": 2234.5678
+			"bottom": 2234.5679
 		}
 	""".trimIndent()
 
@@ -29,6 +29,9 @@ object PaddingTestData {
 	 * An instance of [Padding] expected to match the parsed value of [COMPLETE_PADDING_JSON]
 	 */
 	val COMPLETE_PADDING = Padding(
-		// TODO: Update Padding with a non-default constructor
+		left = 31f,
+		top = 3.63f,
+		right = 600f,
+		bottom = 2234.5679f
 	)
 }

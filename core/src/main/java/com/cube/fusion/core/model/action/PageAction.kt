@@ -12,9 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
  * @property entry the link to the Fusion page entry to redirect to
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-class PageAction : Action() {
-	var entry: UrlLink? = null
-
+class PageAction(var entry: UrlLink? = null) : Action() {
 	override fun extractClick(): String? {
 		return entry?.apiUrl
 	}

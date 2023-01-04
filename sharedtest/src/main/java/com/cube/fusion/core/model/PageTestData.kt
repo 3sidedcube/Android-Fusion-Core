@@ -43,7 +43,11 @@ object PageTestData {
 	 * An instance of [Page] expected to match the parsed value of [COMPLETE_PAGE_JSON]
 	 */
 	val COMPLETE_PAGE = Page(
-		// TODO: Update Page with a non-default constructor
+		id = "page_id",
+		slug = "page_slug",
+		title = "page_title",
+		analyticsScreenView = "page_analytics_screen_view",
+		screen = ScreenTestData.COMPLETE_SCREEN
 	)
 
 	/**

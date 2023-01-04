@@ -17,11 +17,12 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Margin {
-	var left: Float = 0.0f
-	var top: Float = 0.0f
-	var right: Float = 0.0f
-	var bottom: Float = 0.0f
+class Margin(
+	val left: Float = 0.0f,
+	val top: Float = 0.0f,
+	val right: Float = 0.0f,
+	val bottom: Float = 0.0f
+) {
 
 	companion object {
 		/**
@@ -32,11 +33,11 @@ class Margin {
 		 *
 		 * @return an instance of [Margin] with zero margin
 		 */
-		fun zeroMargin() = Margin().apply {
-			left = 0f
-			top = 0f
-			right = 0f
+		fun zeroMargin() = Margin(
+			left = 0f,
+			top = 0f,
+			right = 0f,
 			bottom = 0f
-		}
+		)
 	}
 }

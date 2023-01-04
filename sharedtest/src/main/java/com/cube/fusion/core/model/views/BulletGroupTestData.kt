@@ -2,8 +2,6 @@ package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.FontTestData
-import com.cube.fusion.core.model.ModelTestData
-import com.cube.fusion.core.model.ModelTestData.withCompleteModelProperties
 import com.cube.fusion.core.model.TextAlignment
 import com.cube.fusion.core.resolver.TrivialViewResolver
 import com.cube.fusion.core.resolver.ViewResolver
@@ -44,7 +42,7 @@ object BulletGroupTestData {
 						"number_of_lines": 81,
 						"line_height": 2.23,
 						"letter_spacing": 1.11,
-						${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
+						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
 					},
 					"subtitle": {
 						"class": "Text",
@@ -55,13 +53,13 @@ object BulletGroupTestData {
 						"number_of_lines": 33,
 						"line_height": 7.19,
 						"letter_spacing": 92.88,
-						${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
+						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
 					},
 					"order": 32,
-					${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
+					${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
 				}
 			],
-			${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
 		}
 	""".trimIndent()
 
@@ -80,7 +78,8 @@ object BulletGroupTestData {
 					numberOfLines = 81,
 					lineHeight = 2.23f,
 					letterSpacing = 1.11f,
-				).withCompleteModelProperties(),
+					baseProperties = BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES
+				),
 				subtitle = Text(
 					textColor = "#DDEECC",
 					content = "BulletSubtitle2TextContent",
@@ -88,12 +87,15 @@ object BulletGroupTestData {
 					textAlignment = TextAlignment.JUSTIFIED,
 					numberOfLines = 33,
 					lineHeight = 7.19f,
-					letterSpacing = 92.88f
-				).withCompleteModelProperties(),
-				order = 32
-			).withCompleteModelProperties()
-		)
-	).withCompleteModelProperties()
+					letterSpacing = 92.88f,
+					baseProperties = BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES
+				),
+				order = 32,
+				baseProperties = BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES
+			)
+		),
+		baseProperties = BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES
+	)
 
 	/**
 	 * The required view resolvers to deserialise [COMPLETE_BULLET_GROUP_JSON]

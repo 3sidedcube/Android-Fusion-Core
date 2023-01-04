@@ -2,6 +2,7 @@ package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.model.Model
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import com.fasterxml.jackson.annotation.JsonUnwrapped
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -15,5 +16,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
 class BulletGroup(
-	val children: ArrayList<Bullet> = ArrayList()
+	val children: ArrayList<Bullet> = ArrayList(),
+	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model()

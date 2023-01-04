@@ -3,6 +3,7 @@ package com.cube.fusion.core.model.views
 import com.cube.fusion.core.model.Model
 import com.cube.fusion.core.model.action.Action
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import com.fasterxml.jackson.annotation.JsonUnwrapped
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import kotlinx.parcelize.Parcelize
@@ -25,5 +26,6 @@ class ListItem(
 	val image: Image? = null,
 	val title: Text? = null,
 	val subtitle: Text? = null,
-	val action: Action? = null
+	val action: Action? = null,
+	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model()

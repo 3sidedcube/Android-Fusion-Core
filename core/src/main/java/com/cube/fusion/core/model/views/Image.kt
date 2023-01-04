@@ -3,6 +3,7 @@ package com.cube.fusion.core.model.views
 import com.cube.fusion.core.model.ImageSource
 import com.cube.fusion.core.model.Model
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import com.fasterxml.jackson.annotation.JsonUnwrapped
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import kotlinx.parcelize.Parcelize
@@ -19,5 +20,6 @@ import kotlinx.parcelize.Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Image (
-	val src: ImageSource? = null
+	val src: ImageSource? = null,
+	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model()

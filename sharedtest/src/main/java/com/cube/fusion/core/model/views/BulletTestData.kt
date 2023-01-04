@@ -2,8 +2,6 @@ package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.FontTestData
-import com.cube.fusion.core.model.ModelTestData
-import com.cube.fusion.core.model.ModelTestData.withCompleteModelProperties
 import com.cube.fusion.core.model.TextAlignment
 
 /**
@@ -39,10 +37,10 @@ object BulletTestData {
 				"number_of_lines": 3,
 				"line_height": 7.1,
 				"letter_spacing": 9.88,
-				${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
+				${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
 			},
 			"order": 16,
-			${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
 		}
 	""".trimIndent()
 
@@ -58,8 +56,10 @@ object BulletTestData {
 			textAlignment = TextAlignment.START,
 			numberOfLines = 3,
 			lineHeight = 7.1f,
-			letterSpacing = 9.88f
-		).withCompleteModelProperties(),
-		order = 16
-	).withCompleteModelProperties()
+			letterSpacing = 9.88f,
+			baseProperties = BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES
+		),
+		order = 16,
+		baseProperties = BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES
+	)
 }

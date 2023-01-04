@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import kotlinx.parcelize.Parcelize
-import kotlinx.parcelize.RawValue
 
 /**
  * Model representing a list item with optional start image, title and subtitle, and click action handling
@@ -27,5 +26,5 @@ class ListItem(
 	val image: Image? = null,
 	val title: Text? = null,
 	val subtitle: Text? = null,
-	val action: @RawValue Action? = null
+	val action: Action? = null
 ) : Model(), Parcelable

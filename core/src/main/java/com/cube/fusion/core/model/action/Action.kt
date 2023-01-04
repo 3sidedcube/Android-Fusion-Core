@@ -1,7 +1,9 @@
 package com.cube.fusion.core.model.action
 
+import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonSubTypes
 import com.fasterxml.jackson.annotation.JsonTypeInfo
+import kotlinx.parcelize.IgnoredOnParcel
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "class")
 @JsonSubTypes(
@@ -18,8 +20,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
  *
  * @property class the class name of the action - used for JSON parsing
  */
-abstract class Action {
-	open val `class`: String = javaClass.simpleName
+abstract class Action : Parcelable {
+	@IgnoredOnParcel open val `class`: String = javaClass.simpleName
 
 	abstract fun extractClick(): String?
 }

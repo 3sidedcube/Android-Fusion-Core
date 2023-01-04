@@ -27,6 +27,7 @@ object SizeTestData {
 	 * An instance of [Size] expected to match the parsed value of [COMPLETE_SIZE_JSON]
 	 */
 	val COMPLETE_SIZE = Size(
-		// TODO: Update Size with a non-default constructor
+		width = 36.2f,
+		height = 75.1f
 	)
 }

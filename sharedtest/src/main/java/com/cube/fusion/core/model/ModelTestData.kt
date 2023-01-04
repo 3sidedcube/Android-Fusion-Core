@@ -1,5 +1,11 @@
 package com.cube.fusion.core.model
 
+/**
+ * Object containing useful data for [Model] test cases, for both JVM and instrumented tests
+ *
+ * Created by JR Mitchell on 04/January/2023.
+ * Copyright ® 3SidedCube. All rights reserved.
+ */
 object ModelTestData {
 	/**
 	 * The JSON data expected to parse to an instance of [Model] with every property specified as a non-default value

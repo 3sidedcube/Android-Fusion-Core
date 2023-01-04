@@ -10,6 +10,6 @@ import com.cube.fusion.core.model.action.Action
  *
  * @property action the action to handle when the button is pressed
  */
-class Button : Text() {
+class Button(
 	var action: Action? = null
-}
+) : Text()

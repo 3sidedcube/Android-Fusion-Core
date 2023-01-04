@@ -35,6 +35,10 @@ object EmailActionTestData {
 	 * An instance of [EmailAction] expected to match the parsed value of [COMPLETE_EMAIL_ACTION_JSON]
 	 */
 	val COMPLETE_EMAIL_ACTION = EmailAction(
-		// TODO: Update EmailAction with a non-default constructor
+		to = arrayListOf("fake1@email.com", "fake2@email.com"),
+		cc = arrayListOf("fake3@email.com", "fake4@email.com"),
+		bcc = arrayListOf("fake5@email.com", "fake6@email.com"),
+		subject = "Email Subject",
+		body = "To whom it may concern,\nThis is a test\nYours sincerely,\nJR"
 	)
 }

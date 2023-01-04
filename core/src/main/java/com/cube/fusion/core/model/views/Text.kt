@@ -29,11 +29,11 @@ import kotlinx.parcelize.RawValue
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 open class Text (
-	val textColor: String? = null,
-	val content: String? = null,
-	val font: @RawValue Font? = null,
-	val textAlignment: TextAlignment? = null,
-	val numberOfLines: Int? = null,
-	val lineHeight: Float? = null,
-	val letterSpacing: Float? = null
+	var textColor: String? = null,
+	var content: String? = null,
+	var font: @RawValue Font? = null,
+	var textAlignment: TextAlignment? = null,
+	var numberOfLines: Int? = null,
+	var lineHeight: Float? = null,
+	var letterSpacing: Float? = null
 )  : Model(), Parcelable

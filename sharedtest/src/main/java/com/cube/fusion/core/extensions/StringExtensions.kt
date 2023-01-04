@@ -11,4 +11,9 @@ object StringExtensions {
 	 * Trims the outer curly brackets and any whitespace from this JSON-formatted [String]
 	 */
 	fun String.trimJsonContainer() = this.trimStart(' ', '\t', '\n', '{').trimEnd(' ', '\t', '\n').trimEnd('}')
+
+	/**
+	 * Removes the class from this JSON-formatted [String]
+	 */
+	fun String.withoutClass() = this.replace(Regex("\"class\": \"[a-zA-Z]+\","), "")
 }

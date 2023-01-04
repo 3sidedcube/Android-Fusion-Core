@@ -18,7 +18,7 @@ import kotlinx.parcelize.Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
 class NativeAction @JsonCreator
-constructor(@JsonProperty("link") var link: String?) : Action(), Parcelable {
+constructor(@JsonProperty("link") var link: String? = null) : Action(), Parcelable {
 	override fun extractClick(): String? {
 		return link
 	}

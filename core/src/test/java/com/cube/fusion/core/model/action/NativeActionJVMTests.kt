@@ -15,7 +15,7 @@ class NativeActionJVMTests {
 	 */
 	@Test
 	fun testNoArgsNativeActionDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
-		NativeAction(null), // TODO: class needs a no-args constructor
+		NativeAction(),
 		NativeActionTestData.NO_ARGS_NATIVE_ACTION_JSON
 	)
 

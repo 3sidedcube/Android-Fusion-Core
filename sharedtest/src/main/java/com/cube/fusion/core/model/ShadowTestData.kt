@@ -31,6 +31,11 @@ object ShadowTestData {
 	 * An instance of [Shadow] expected to match the parsed value of [COMPLETE_SHADOW_JSON]
 	 */
 	val COMPLETE_SHADOW = Shadow(
-		// TODO: Update Shadow with a non-default constructor
+		color = "#FFCC00",
+		alpha = 0.78f,
+		x = 9.9f,
+		y = 1.7f,
+		blur = 3.2f,
+		spread = 0.5f
 	)
 }

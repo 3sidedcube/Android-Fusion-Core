@@ -27,4 +27,13 @@ class MarginJVMTests {
 		MarginTestData.COMPLETE_MARGIN,
 		MarginTestData.COMPLETE_MARGIN_JSON
 	)
+
+	/**
+	 * Test that the relevant JSON data for a [Margin] instance with zero margin matches the zero margin method
+	 */
+	@Test
+	fun testZeroMarginDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		Margin.zeroMargin(),
+		MarginTestData.ZERO_MARGIN_JSON
+	)
 }

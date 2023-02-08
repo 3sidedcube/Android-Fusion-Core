@@ -15,6 +15,6 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
-class BulletGroup : Model(), Parcelable {
+class BulletGroup(
 	val children: ArrayList<Bullet> = ArrayList()
-}
+) : Model(), Parcelable

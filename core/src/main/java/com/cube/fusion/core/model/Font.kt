@@ -17,7 +17,11 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Font {
+class Font(
+	var name: String? = null,
+	var weight: Weight? = null,
+	var size: Float? = null
+) {
 	/**
 	 * Enum class representing different weights of font
 	 *
@@ -47,13 +51,4 @@ class Font {
 		@JsonProperty("italic")
 		ITALIC,
 	}
-
-	/// Name of the font, e.g. "Open Sans"
-	var name: String? = null
-
-	/// Weight of the font, e.g. "Regular"
-	var weight: Weight? = null
-
-	/// Size of the font in pt, e.g. 10
-	var size: Float? = null
 }

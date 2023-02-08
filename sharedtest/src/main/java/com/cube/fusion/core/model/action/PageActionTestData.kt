@@ -33,6 +33,6 @@ object PageActionTestData {
 	 * An instance of [PageAction] expected to match the parsed value of [COMPLETE_PAGE_ACTION_JSON]
 	 */
 	val COMPLETE_PAGE_ACTION = PageAction(
-		// TODO: Update PageAction with a non-default constructor
+		entry = UrlLinkTestData.COMPLETE_URL_LINK
 	)
 }

@@ -17,8 +17,8 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class UrlLink {
-	var id: String? = null
-	var title: String? = null
-	var apiUrl: String? = null
-}
+class UrlLink (
+	val id: String? = null,
+	val title: String? = null,
+	val apiUrl: String? = null
+)

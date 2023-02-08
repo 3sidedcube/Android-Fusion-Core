@@ -3,6 +3,8 @@ package com.cube.fusion.core.model.views
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.FontTestData
 import com.cube.fusion.core.model.ModelTestData
+import com.cube.fusion.core.model.ModelTestData.withCompleteModelProperties
+import com.cube.fusion.core.model.TextAlignment
 import com.cube.fusion.core.model.action.EmailActionTestData
 
 /**
@@ -31,13 +33,13 @@ object ListItemTestData {
 			"title": ${TextTestData.COMPLETE_TEXT_JSON},
 			"subtitle": {
 				"class": "Text",
-				"textColor": "#DDEECC",
+				"text_color": "#DDEECC",
 				"content": "SubtitleTextContent",
 				"font": ${FontTestData.COMPLETE_FONT_JSON},
-				"textAlignment": "left",
-				"numberOfLines": 3,
-				"lineHeight": 7.1,
-				"letterSpacing": 9.88,
+				"text_alignment": "left",
+				"number_of_lines": 3,
+				"line_height": 7.1,
+				"letter_spacing": 9.88,
 				${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
 			},
 			"image": ${ImageTestData.COMPLETE_IMAGE_JSON},
@@ -50,6 +52,17 @@ object ListItemTestData {
 	 * An instance of [ListItem] expected to match the parsed value of [COMPLETE_LIST_ITEM_JSON]
 	 */
 	val COMPLETE_LIST_ITEM = ListItem(
-		// TODO: Update ListItem with a non-default constructor
-	)
+		title = TextTestData.COMPLETE_TEXT,
+		subtitle = Text(
+			textColor = "#DDEECC",
+			content = "SubtitleTextContent",
+			font = FontTestData.COMPLETE_FONT,
+			textAlignment = TextAlignment.START,
+			numberOfLines = 3,
+			lineHeight = 7.1f,
+			letterSpacing = 9.88f
+		).withCompleteModelProperties(),
+		image = ImageTestData.COMPLETE_IMAGE,
+		action = EmailActionTestData.COMPLETE_EMAIL_ACTION
+	).withCompleteModelProperties()
 }

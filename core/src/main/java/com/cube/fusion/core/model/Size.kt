@@ -18,7 +18,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Size : Parcelable {
-	var width: Float = 0.0f
-	var height: Float = 0.0f
-}
+class Size (
+	val width: Float = 0.0f,
+	val height: Float = 0.0f
+) : Parcelable

@@ -21,7 +21,19 @@ object MarginTestData {
 			"left": 30,
 			"top": 2.63,
 			"right": 500,
-			"bottom": 1234.5678
+			"bottom": 1234.5677
+		}
+	""".trimIndent()
+
+	/**
+	 * The JSON data expected to parse to [Margin.zeroMargin]
+	 */
+	val ZERO_MARGIN_JSON = """
+		{
+			"left": 0,
+			"top": 0,
+			"right": 0,
+			"bottom": 0
 		}
 	""".trimIndent()
 
@@ -29,6 +41,9 @@ object MarginTestData {
 	 * An instance of [Margin] expected to match the parsed value of [COMPLETE_MARGIN_JSON]
 	 */
 	val COMPLETE_MARGIN = Margin(
-		// TODO: Update Margin with a non-default constructor
+		left = 30f,
+		top = 2.63f,
+		right = 500f,
+		bottom = 1234.5677f
 	)
 }

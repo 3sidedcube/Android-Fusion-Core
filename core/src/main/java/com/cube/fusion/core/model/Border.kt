@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Border {
-	var strokeWidth: Float = 0f
+class Border(
+	var strokeWidth: Float = 0f,
 	var color: String? = null
-}
+)

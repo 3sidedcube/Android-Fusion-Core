@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 
 /**
  * Container model for a list of models to display in a single Fusion screen
@@ -18,6 +19,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Screen : Model(), Parcelable {
-	val children: MutableList<Model> = mutableListOf()
-}
+class Screen(
+	val children: @RawValue MutableList<Model> = mutableListOf()
+) : Model(), Parcelable

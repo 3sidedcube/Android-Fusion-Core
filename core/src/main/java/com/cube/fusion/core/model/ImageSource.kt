@@ -17,9 +17,9 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class ImageSource {
-	var url: String? = null
-	var id: String? = null
-	var permalink: String? = null
+class ImageSource(
+	var url: String? = null,
+	var id: String? = null,
+	var permalink: String? = null,
 	var apiUrl: String? = null
-}
+)

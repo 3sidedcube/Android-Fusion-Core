@@ -29,6 +29,9 @@ object ImageSourceTestData {
 	 * An instance of [ImageSource] expected to match the parsed value of [COMPLETE_IMAGE_SOURCE_JSON]
 	 */
 	val COMPLETE_IMAGE_SOURCE = ImageSource(
-		// TODO: Update ImageSource with a non-default constructor
+		url = "image_url",
+		id = "src_id",
+		permalink = "permalink_url",
+		apiUrl = "src_url"
 	)
 }

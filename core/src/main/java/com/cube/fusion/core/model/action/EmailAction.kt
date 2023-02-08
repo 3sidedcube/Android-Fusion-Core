@@ -16,13 +16,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
  *
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-class EmailAction : Action() {
-	val to: ArrayList<String>? = null
-	val cc: ArrayList<String>? = null
-	val bcc: ArrayList<String>? = null
-	val subject: String? = null
+class EmailAction(
+	val to: ArrayList<String>? = null,
+	val cc: ArrayList<String>? = null,
+	val bcc: ArrayList<String>? = null,
+	val subject: String? = null,
 	val body: String? = null
-
+) : Action() {
 	override fun extractClick(): String? {
 		return null
 	}

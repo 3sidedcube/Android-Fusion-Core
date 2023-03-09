@@ -1,9 +1,18 @@
 package com.cube.fusion.core.model
 
+import android.os.Parcelable
+import com.cube.fusion.core.model.Font.Weight
+import com.cube.fusion.core.model.Font.Weight.BOLD
+import com.cube.fusion.core.model.Font.Weight.HEAVY
+import com.cube.fusion.core.model.Font.Weight.ITALIC
+import com.cube.fusion.core.model.Font.Weight.LIGHT
+import com.cube.fusion.core.model.Font.Weight.REGULAR
+import com.cube.fusion.core.model.Font.Weight.SEMIBOLD
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import kotlinx.parcelize.Parcelize
 
 /**
  * Representation of a font specification in which to display a piece of text
@@ -17,11 +26,12 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Parcelize
 class Font(
 	var name: String? = null,
 	var weight: Weight? = null,
 	var size: Float? = null
-) {
+) : Parcelable {
 	/**
 	 * Enum class representing different weights of font
 	 *

@@ -1,8 +1,10 @@
 package com.cube.fusion.core.model
 
+import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import kotlinx.parcelize.Parcelize
 
 /**
  * Representation of the source of an image that can be loaded into an appropriate view
@@ -17,9 +19,10 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Parcelize
 class ImageSource(
 	var url: String? = null,
 	var id: String? = null,
 	var permalink: String? = null,
 	var apiUrl: String? = null
-)
+) : Parcelable

@@ -1,8 +1,10 @@
 package com.cube.fusion.core.model
 
+import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import kotlinx.parcelize.Parcelize
 
 /**
  * Class representing a solid border around a view
@@ -16,7 +18,8 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Parcelize
 class Border(
 	var strokeWidth: Float = 0f,
 	var color: String? = null
-)
+): Parcelable

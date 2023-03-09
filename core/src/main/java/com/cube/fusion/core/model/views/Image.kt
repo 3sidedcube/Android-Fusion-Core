@@ -1,13 +1,11 @@
 package com.cube.fusion.core.model.views
 
-import android.os.Parcelable
 import com.cube.fusion.core.model.ImageSource
 import com.cube.fusion.core.model.Model
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import kotlinx.parcelize.Parcelize
-import kotlinx.parcelize.RawValue
 
 /**
  * Model representing a single image view
@@ -21,5 +19,5 @@ import kotlinx.parcelize.RawValue
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Image (
-	val src: @RawValue ImageSource? = null
-) : Model(), Parcelable
+	val src: ImageSource? = null
+) : Model()

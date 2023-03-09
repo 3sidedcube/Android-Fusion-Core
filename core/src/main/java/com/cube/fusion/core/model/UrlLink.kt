@@ -1,8 +1,10 @@
 package com.cube.fusion.core.model
 
+import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import kotlinx.parcelize.Parcelize
 
 /**
  * Representation of a link to a Fusion page
@@ -17,8 +19,9 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Parcelize
 class UrlLink (
 	val id: String? = null,
 	val title: String? = null,
 	val apiUrl: String? = null
-)
+) : Parcelable

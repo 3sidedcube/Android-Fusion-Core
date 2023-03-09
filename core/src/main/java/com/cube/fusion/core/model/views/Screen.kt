@@ -1,12 +1,10 @@
 package com.cube.fusion.core.model.views
 
-import android.os.Parcelable
 import com.cube.fusion.core.model.Model
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import kotlinx.parcelize.Parcelize
-import kotlinx.parcelize.RawValue
 
 /**
  * Container model for a list of models to display in a single Fusion screen
@@ -20,5 +18,5 @@ import kotlinx.parcelize.RawValue
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Screen(
-	val children: @RawValue MutableList<Model> = mutableListOf()
-) : Model(), Parcelable
+	val children: MutableList<Model> = mutableListOf()
+) : Model()

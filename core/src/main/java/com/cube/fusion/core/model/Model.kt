@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model
 
+import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonTypeInfo
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
@@ -10,7 +11,6 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 	include = JsonTypeInfo.As.PROPERTY,
 	property = "class"
 )
-
 /**
  * Base class for all models for Fusion views
  * Contains all properties that most Fusion views should be able to configure their appearance with
@@ -27,7 +27,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  * @property border the [Border] to display around the view
  * @property shadow the drop [Shadow] to display behind the view
  */
-abstract class Model {
+abstract class Model : Parcelable {
 	// Class of the view
 	open val `class`: String = javaClass.simpleName
 

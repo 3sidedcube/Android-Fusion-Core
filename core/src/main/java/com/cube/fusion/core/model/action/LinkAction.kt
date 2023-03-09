@@ -3,6 +3,7 @@ package com.cube.fusion.core.model.action
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import kotlinx.parcelize.Parcelize
 
 /**
  * This class contains the data for an action that is handled by linking to a webpage
@@ -16,6 +17,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Parcelize
 class LinkAction(
 	var link: String? = null,
 	var inApp: Boolean = false

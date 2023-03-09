@@ -1,8 +1,10 @@
 package com.cube.fusion.core.model
 
+import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import kotlinx.parcelize.Parcelize
 
 /**
  * Specification for the padding inside a single Fusion view
@@ -17,12 +19,13 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Parcelize
 class Padding(
 	val left: Float = 0.0f,
 	val top: Float = 0.0f,
 	val right: Float = 0.0f,
 	val bottom: Float = 0.0f
-) {
+) : Parcelable {
 
 	companion object {
 		/**

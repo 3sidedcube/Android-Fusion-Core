@@ -1,6 +1,7 @@
 package com.cube.fusion.core.model.action
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import kotlinx.parcelize.Parcelize
 
 /**
  * This class contains the data for an action that is handled as an email
@@ -16,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
  *
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Parcelize
 class EmailAction(
 	val to: ArrayList<String>? = null,
 	val cc: ArrayList<String>? = null,

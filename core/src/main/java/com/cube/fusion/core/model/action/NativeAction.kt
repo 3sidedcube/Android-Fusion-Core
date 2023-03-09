@@ -1,9 +1,7 @@
 package com.cube.fusion.core.model.action
 
 import android.os.Parcelable
-import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import com.fasterxml.jackson.annotation.JsonProperty
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -17,8 +15,7 @@ import kotlinx.parcelize.Parcelize
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class NativeAction @JsonCreator
-constructor(@JsonProperty("link") var link: String? = null) : Action(), Parcelable {
+class NativeAction(var link: String? = null) : Action(), Parcelable {
 	override fun extractClick(): String? {
 		return link
 	}

@@ -1,8 +1,6 @@
 package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
-import com.cube.fusion.core.model.ModelTestData
-import com.cube.fusion.core.model.ModelTestData.withCompleteModelProperties
 import com.cube.fusion.core.resolver.TrivialViewResolver
 import com.cube.fusion.core.resolver.ViewResolver
 
@@ -38,7 +36,7 @@ object ScreenTestData {
 				${ListItemTestData.COMPLETE_LIST_ITEM_JSON},
 				${TextTestData.COMPLETE_TEXT_JSON}
 			],
-			${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
 		}
 	""".trimIndent()
 
@@ -54,8 +52,9 @@ object ScreenTestData {
 			ImageTestData.COMPLETE_IMAGE,
 			ListItemTestData.COMPLETE_LIST_ITEM,
 			TextTestData.COMPLETE_TEXT
-		)
-	).withCompleteModelProperties()
+		),
+		baseProperties = BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES
+	)
 
 	/**
 	 * The required view resolvers to deserialise [COMPLETE_SCREEN_JSON]

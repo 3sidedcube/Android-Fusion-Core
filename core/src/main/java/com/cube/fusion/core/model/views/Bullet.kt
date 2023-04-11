@@ -2,6 +2,7 @@ package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.model.Model
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import com.fasterxml.jackson.annotation.JsonUnwrapped
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -19,5 +20,6 @@ import kotlinx.parcelize.Parcelize
 class Bullet(
 	val title: Text? = null,
 	val subtitle: Text? = null,
-	var order: Int = 0
+	var order: Int = 0,
+	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model()

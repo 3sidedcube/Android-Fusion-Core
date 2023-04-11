@@ -2,8 +2,6 @@ package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.ImageSourceTestData
-import com.cube.fusion.core.model.ModelTestData
-import com.cube.fusion.core.model.ModelTestData.withCompleteModelProperties
 
 /**
  * Object containing useful data for [Image] test cases, for both JVM and instrumented tests
@@ -29,7 +27,7 @@ object ImageTestData {
 		{
 			"class": "Image",
 			"src": ${ImageSourceTestData.COMPLETE_IMAGE_SOURCE_JSON},
-			${ModelTestData.COMPLETE_MODEL_JSON.trimJsonContainer()}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
 		}
 	""".trimIndent()
 
@@ -37,6 +35,7 @@ object ImageTestData {
 	 * An instance of [Image] expected to match the parsed value of [COMPLETE_IMAGE_JSON]
 	 */
 	val COMPLETE_IMAGE = Image(
-		src = ImageSourceTestData.COMPLETE_IMAGE_SOURCE
-	).withCompleteModelProperties()
+		src = ImageSourceTestData.COMPLETE_IMAGE_SOURCE,
+		baseProperties = BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES
+	)
 }

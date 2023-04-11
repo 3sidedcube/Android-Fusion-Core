@@ -19,7 +19,7 @@ buildscript {
  * @param requiredVersion the version that is required for this project
  * @return the consistent required version identifier for exported artifacts
  */
-def thisOrJitpackVersion(requiredVersion) {
+static def thisOrJitpackVersion(requiredVersion) {
 	if("$System.env.JITPACK".toString() == "true") {
 		def jitpackVersion = "$System.env.VERSION".toString()
 		if(jitpackVersion ==~ /\w?\d+\.\d+\.\d+(-\w+)?/)
@@ -33,7 +33,7 @@ def thisOrJitpackVersion(requiredVersion) {
 
 ext {
 	// Do not remove the call to thisOrJitpackVersion - this ensures that versions for all generated artifacts are aligned.
-	fusionLibVersion = thisOrJitpackVersion('v0.0.2')
+	fusionLibVersion = thisOrJitpackVersion('v0.0.3-rc1')
 }
 
 task clean(type: Delete) {

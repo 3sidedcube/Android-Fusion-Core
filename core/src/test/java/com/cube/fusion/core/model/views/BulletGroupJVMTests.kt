@@ -39,7 +39,7 @@ class BulletGroupJVMTests {
 	@Test
 	fun testNoArgsBulletGroupSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		BulletGroup(),
-		BulletGroupTestData.NO_ARGS_BULLET_GROUP_JSON
+		BulletGroupTestData.DEFAULT_BULLET_GROUP_JSON
 	)
 
 	/**

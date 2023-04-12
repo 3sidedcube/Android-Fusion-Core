@@ -22,6 +22,16 @@ object ScreenTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [BulletGroup] constructed with no arguments
+	 */
+	val DEFAULT_SCREEN_JSON = """
+		{
+			"class": "Screen",
+			"children": [ ]
+		}
+	""".trimIndent()
+
+	/**
 	 * The JSON data expected to parse to an instance of [Screen] with every property specified as a non-default value
 	 */
 	val COMPLETE_SCREEN_JSON = """

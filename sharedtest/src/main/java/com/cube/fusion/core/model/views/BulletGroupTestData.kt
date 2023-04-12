@@ -25,6 +25,16 @@ object BulletGroupTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [BulletGroup] constructed with no arguments
+	 */
+	val DEFAULT_BULLET_GROUP_JSON = """
+		{
+			"class": "BulletGroup",
+			"children": [ ]
+		}
+	""".trimIndent()
+
+	/**
 	 * The JSON data expected to parse to an instance of [BulletGroup] with every property specified as a non-default value
 	 */
 	val COMPLETE_BULLET_GROUP_JSON = """

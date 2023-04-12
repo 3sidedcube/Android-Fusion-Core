@@ -37,7 +37,7 @@ class BulletJVMTests {
 	@Test
 	fun testNoArgsBulletSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		Bullet(),
-		BulletTestData.NO_ARGS_BULLET_JSON
+		BulletTestData.DEFAULT_BULLET_JSON
 	)
 
 	/**

@@ -39,7 +39,7 @@ class ScreenJVMTests {
 	@Test
 	fun testNoArgsScreenSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		Screen(),
-		ScreenTestData.NO_ARGS_SCREEN_JSON
+		ScreenTestData.DEFAULT_SCREEN_JSON
 	)
 
 	/**

@@ -23,6 +23,16 @@ object BulletTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [Bullet] constructed with no arguments
+	 */
+	val DEFAULT_BULLET_JSON = """
+		{
+			"class": "Bullet",
+			"order": 0
+		}
+	""".trimIndent()
+
+	/**
 	 * The JSON data expected to parse to an instance of [Bullet] with every property specified as a non-default value
 	 */
 	val COMPLETE_BULLET_JSON = """

@@ -18,6 +18,16 @@ object LinkActionTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [LinkAction] constructed with no arguments
+	 */
+	val DEFAULT_LINK_ACTION_JSON = """
+		{
+			"class": "LinkAction",
+			"in_app": false
+		}
+	""".trimIndent()
+
+	/**
 	 * The JSON data expected to parse to an instance of [LinkAction] with every property specified as a non-default value
 	 */
 	val COMPLETE_LINK_ACTION_JSON = """

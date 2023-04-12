@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes
 import com.fasterxml.jackson.annotation.JsonTypeInfo
 import kotlinx.parcelize.IgnoredOnParcel
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "class")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "class")
 @JsonSubTypes(
 	JsonSubTypes.Type(value = NativeAction::class, name = "NativeAction"),
 	JsonSubTypes.Type(value = LinkAction::class, name = "LinkAction"),

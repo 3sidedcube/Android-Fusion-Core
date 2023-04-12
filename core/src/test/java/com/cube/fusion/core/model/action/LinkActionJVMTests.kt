@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.action
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
 import org.junit.Test
 
@@ -24,6 +25,24 @@ class LinkActionJVMTests {
 	 */
 	@Test
 	fun testCompleteLinkActionDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		LinkActionTestData.COMPLETE_LINK_ACTION,
+		LinkActionTestData.COMPLETE_LINK_ACTION_JSON
+	)
+
+	/**
+	 * Test that an [LinkAction] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsLinkActionSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		LinkAction(),
+		LinkActionTestData.DEFAULT_LINK_ACTION_JSON
+	)
+
+	/**
+	 * Test that an [LinkAction] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteLinkActionSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		LinkActionTestData.COMPLETE_LINK_ACTION,
 		LinkActionTestData.COMPLETE_LINK_ACTION_JSON
 	)

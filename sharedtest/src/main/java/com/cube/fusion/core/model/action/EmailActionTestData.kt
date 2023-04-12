@@ -23,9 +23,18 @@ object EmailActionTestData {
 	val COMPLETE_EMAIL_ACTION_JSON = """
 		{
 			"class": "EmailAction",
-			"to": ["fake1@email.com", "fake2@email.com"],
-			"cc": ["fake3@email.com", "fake4@email.com"],
-			"bcc": ["fake5@email.com", "fake6@email.com"],
+			"to": [
+				"fake1@email.com",
+				"fake2@email.com"
+			],
+			"cc": [
+				"fake3@email.com",
+				"fake4@email.com"
+			],
+			"bcc": [
+				"fake5@email.com",
+				"fake6@email.com"
+			],
 			"subject": "Email Subject",
 			"body": "To whom it may concern,\nThis is a test\nYours sincerely,\nJR"
 		}

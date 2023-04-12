@@ -25,7 +25,7 @@ object PageActionTestData {
 	val COMPLETE_PAGE_ACTION_JSON = """
 		{
 			"class": "PageAction",
-			"entry": ${UrlLinkTestData.COMPLETE_URL_LINK_JSON}
+			"entry": ${UrlLinkTestData.COMPLETE_URL_LINK_JSON.prependIndent("\t\t\t").removePrefix("\t\t\t")}
 		}
 	""".trimIndent()
 

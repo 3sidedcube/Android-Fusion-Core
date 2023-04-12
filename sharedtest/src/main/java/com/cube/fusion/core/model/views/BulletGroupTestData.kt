@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.FontTestData
 import com.cube.fusion.core.model.TextAlignment
@@ -24,42 +25,52 @@ object BulletGroupTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [BulletGroup] constructed with no arguments
+	 */
+	val DEFAULT_BULLET_GROUP_JSON = """
+		{
+			"class": "BulletGroup",
+			"children": [ ]
+		}
+	""".trimIndent()
+
+	/**
 	 * The JSON data expected to parse to an instance of [BulletGroup] with every property specified as a non-default value
 	 */
 	val COMPLETE_BULLET_GROUP_JSON = """
 		{
 			"class": "BulletGroup",
 			"children": [
-				${BulletTestData.COMPLETE_BULLET_JSON},
+				${BulletTestData.COMPLETE_BULLET_JSON.tabIndented(4)},
 				{
 					"class": "Bullet",
 					"title": {
 						"class": "Text",
 						"text_color": "#ADEECC",
 						"content": "BulletTitle2TextContent",
-						"font": ${FontTestData.COMPLETE_FONT_JSON},
+						"font": ${FontTestData.COMPLETE_FONT_JSON.tabIndented(6)},
 						"text_alignment": "right",
 						"number_of_lines": 81,
 						"line_height": 2.23,
 						"letter_spacing": 1.11,
-						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(5)}
 					},
 					"subtitle": {
 						"class": "Text",
 						"text_color": "#DDEECC",
 						"content": "BulletSubtitle2TextContent",
-						"font": ${FontTestData.COMPLETE_FONT_JSON},
+						"font": ${FontTestData.COMPLETE_FONT_JSON.tabIndented(6)},
 						"text_alignment": "justified",
 						"number_of_lines": 33,
 						"line_height": 7.19,
 						"letter_spacing": 92.88,
-						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(5)}
 					},
 					"order": 32,
-					${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+					${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(4)}
 				}
 			],
-			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(2)}
 		}
 	""".trimIndent()
 

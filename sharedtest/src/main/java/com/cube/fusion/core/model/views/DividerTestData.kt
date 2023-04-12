@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 
 /**
@@ -25,8 +26,8 @@ object DividerTestData {
 	val COMPLETE_DIVIDER_JSON = """
 		{
 			"class": "Divider",
-			"stroke_width": "54.2",
-			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+			"stroke_width": 54.2,
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(2)}
 		}
 	""".trimIndent()
 

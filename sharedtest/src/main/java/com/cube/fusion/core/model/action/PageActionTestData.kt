@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.action
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.model.UrlLinkTestData
 
 /**
@@ -25,7 +26,7 @@ object PageActionTestData {
 	val COMPLETE_PAGE_ACTION_JSON = """
 		{
 			"class": "PageAction",
-			"entry": ${UrlLinkTestData.COMPLETE_URL_LINK_JSON}
+			"entry": ${UrlLinkTestData.COMPLETE_URL_LINK_JSON.tabIndented(3)}
 		}
 	""".trimIndent()
 

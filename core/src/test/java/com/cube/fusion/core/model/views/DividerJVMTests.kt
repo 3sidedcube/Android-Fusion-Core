@@ -1,6 +1,9 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
+import com.cube.fusion.core.model.action.EmailAction
+import com.cube.fusion.core.model.action.EmailActionTestData
 import org.junit.Test
 
 /**
@@ -24,6 +27,24 @@ class DividerJVMTests {
 	 */
 	@Test
 	fun testCompleteDividerDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		DividerTestData.COMPLETE_DIVIDER,
+		DividerTestData.COMPLETE_DIVIDER_JSON
+	)
+
+	/**
+	 * Test that an [Divider] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsDividerSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		Divider(),
+		DividerTestData.NO_ARGS_DIVIDER_JSON
+	)
+
+	/**
+	 * Test that an [Divider] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteDividerSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		DividerTestData.COMPLETE_DIVIDER,
 		DividerTestData.COMPLETE_DIVIDER_JSON
 	)

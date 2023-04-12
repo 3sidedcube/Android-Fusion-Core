@@ -18,9 +18,9 @@ object PaddingTestData {
 	 */
 	val COMPLETE_PADDING_JSON = """
 		{
-			"left": 31,
+			"left": 31.0,
 			"top": 3.63,
-			"right": 600,
+			"right": 600.0,
 			"bottom": 2234.5679
 		}
 	""".trimIndent()
@@ -30,10 +30,10 @@ object PaddingTestData {
 	 */
 	val ZERO_PADDING_JSON = """
 		{
-			"left": 0,
-			"top": 0,
-			"right": 0,
-			"bottom": 0
+			"left": 0.0,
+			"top": 0.0,
+			"right": 0.0,
+			"bottom": 0.0
 		}
 	""".trimIndent()
 

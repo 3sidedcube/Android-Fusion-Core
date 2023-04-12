@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.action
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
 import org.junit.Test
 
@@ -24,6 +25,24 @@ class PageActionJVMTests {
 	 */
 	@Test
 	fun testCompletePageActionDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		PageActionTestData.COMPLETE_PAGE_ACTION,
+		PageActionTestData.COMPLETE_PAGE_ACTION_JSON
+	)
+
+	/**
+	 * Test that an [PageAction] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsPageActionSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		PageAction(),
+		PageActionTestData.NO_ARGS_PAGE_ACTION_JSON
+	)
+
+	/**
+	 * Test that an [PageAction] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompletePageActionSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		PageActionTestData.COMPLETE_PAGE_ACTION,
 		PageActionTestData.COMPLETE_PAGE_ACTION_JSON
 	)

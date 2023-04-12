@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.FontTestData
 import com.cube.fusion.core.model.TextAlignment
@@ -29,12 +30,12 @@ object TextTestData {
 			"class": "Text",
 			"text_color": "#EEDDCC",
 			"content": "TextContent",
-			"font": ${FontTestData.COMPLETE_FONT_JSON},
+			"font": ${FontTestData.COMPLETE_FONT_JSON.tabIndented(3)},
 			"text_alignment": "center",
 			"number_of_lines": 6,
 			"line_height": 5.2,
 			"letter_spacing": 3.33,
-			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(2)}
 		}
 	""".trimIndent()
 

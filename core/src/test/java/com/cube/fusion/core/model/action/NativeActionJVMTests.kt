@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.action
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
 import org.junit.Test
 
@@ -24,6 +25,24 @@ class NativeActionJVMTests {
 	 */
 	@Test
 	fun testCompleteNativeActionDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		NativeActionTestData.COMPLETE_NATIVE_ACTION,
+		NativeActionTestData.COMPLETE_NATIVE_ACTION_JSON
+	)
+
+	/**
+	 * Test that an [NativeAction] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsNativeActionSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		NativeAction(),
+		NativeActionTestData.NO_ARGS_NATIVE_ACTION_JSON
+	)
+
+	/**
+	 * Test that an [NativeAction] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteNativeActionSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		NativeActionTestData.COMPLETE_NATIVE_ACTION,
 		NativeActionTestData.COMPLETE_NATIVE_ACTION_JSON
 	)

@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.model.BorderTestData
 import com.cube.fusion.core.model.MarginTestData
 import com.cube.fusion.core.model.PaddingTestData
@@ -19,10 +20,10 @@ object BaseViewPropertiesTestData {
 		{
 			"background_color": "#FFEEDD",
 			"corner_radius": 3.2,
-			"padding": ${PaddingTestData.COMPLETE_PADDING_JSON},
-			"margin": ${MarginTestData.COMPLETE_MARGIN_JSON},
-			"border": ${BorderTestData.COMPLETE_BORDER_JSON},
-			"shadow": ${ShadowTestData.COMPLETE_SHADOW_JSON}
+			"padding": ${PaddingTestData.COMPLETE_PADDING_JSON.tabIndented(3)},
+			"margin": ${MarginTestData.COMPLETE_MARGIN_JSON.tabIndented(3)},
+			"border": ${BorderTestData.COMPLETE_BORDER_JSON.tabIndented(3)},
+			"shadow": ${ShadowTestData.COMPLETE_SHADOW_JSON.tabIndented(3)}
 		}
 	""".trimIndent()
 

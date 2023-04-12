@@ -18,9 +18,9 @@ object MarginTestData {
 	 */
 	val COMPLETE_MARGIN_JSON = """
 		{
-			"left": 30,
+			"left": 30.0,
 			"top": 2.63,
-			"right": 500,
+			"right": 500.0,
 			"bottom": 1234.5677
 		}
 	""".trimIndent()
@@ -30,10 +30,10 @@ object MarginTestData {
 	 */
 	val ZERO_MARGIN_JSON = """
 		{
-			"left": 0,
-			"top": 0,
-			"right": 0,
-			"bottom": 0
+			"left": 0.0,
+			"top": 0.0,
+			"right": 0.0,
+			"bottom": 0.0
 		}
 	""".trimIndent()
 

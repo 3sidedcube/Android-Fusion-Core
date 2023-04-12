@@ -1,6 +1,9 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
+import com.cube.fusion.core.model.action.EmailAction
+import com.cube.fusion.core.model.action.EmailActionTestData
 import org.junit.Test
 
 /**
@@ -28,5 +31,23 @@ class ScreenJVMTests {
 		ScreenTestData.COMPLETE_SCREEN,
 		ScreenTestData.COMPLETE_SCREEN_JSON,
 		ScreenTestData.SCREEN_TEST_RESOLVERS
+	)
+
+	/**
+	 * Test that an [Screen] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsScreenSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		Screen(),
+		ScreenTestData.NO_ARGS_SCREEN_JSON
+	)
+
+	/**
+	 * Test that an [Screen] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteScreenSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		ScreenTestData.COMPLETE_SCREEN,
+		ScreenTestData.COMPLETE_SCREEN_JSON
 	)
 }

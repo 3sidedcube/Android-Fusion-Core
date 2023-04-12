@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.ImageSourceTestData
 
@@ -26,8 +27,8 @@ object ImageTestData {
 	val COMPLETE_IMAGE_JSON = """
 		{
 			"class": "Image",
-			"src": ${ImageSourceTestData.COMPLETE_IMAGE_SOURCE_JSON},
-			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+			"src": ${ImageSourceTestData.COMPLETE_IMAGE_SOURCE_JSON.tabIndented(3)},
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(2)}
 		}
 	""".trimIndent()
 

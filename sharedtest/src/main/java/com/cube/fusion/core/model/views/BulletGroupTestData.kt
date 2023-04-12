@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.FontTestData
 import com.cube.fusion.core.model.TextAlignment
@@ -30,19 +31,19 @@ object BulletGroupTestData {
 		{
 			"class": "BulletGroup",
 			"children": [
-				${BulletTestData.COMPLETE_BULLET_JSON},
+				${BulletTestData.COMPLETE_BULLET_JSON.tabIndented(4)},
 				{
 					"class": "Bullet",
 					"title": {
 						"class": "Text",
 						"text_color": "#ADEECC",
 						"content": "BulletTitle2TextContent",
-						"font": ${FontTestData.COMPLETE_FONT_JSON},
+						"font": ${FontTestData.COMPLETE_FONT_JSON.tabIndented(6)},
 						"text_alignment": "right",
 						"number_of_lines": 81,
 						"line_height": 2.23,
 						"letter_spacing": 1.11,
-						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(6)}
 					},
 					"subtitle": {
 						"class": "Text",
@@ -53,13 +54,13 @@ object BulletGroupTestData {
 						"number_of_lines": 33,
 						"line_height": 7.19,
 						"letter_spacing": 92.88,
-						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(6)}
 					},
 					"order": 32,
-					${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+					${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(5)}
 				}
 			],
-			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(3)}
 		}
 	""".trimIndent()
 

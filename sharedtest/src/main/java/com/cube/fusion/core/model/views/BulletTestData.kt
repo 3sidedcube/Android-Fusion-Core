@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.FontTestData
 import com.cube.fusion.core.model.TextAlignment
@@ -27,17 +28,17 @@ object BulletTestData {
 	val COMPLETE_BULLET_JSON = """
 		{
 			"class": "Bullet",
-			"title": ${TextTestData.COMPLETE_TEXT_JSON},
+			"title": ${TextTestData.COMPLETE_TEXT_JSON.tabIndented(3)},
 			"subtitle": {
 				"class": "Text",
 				"text_color": "#DDEECC",
 				"content": "BulletSubtitleTextContent",
-				"font": ${FontTestData.COMPLETE_FONT_JSON},
+				"font": ${FontTestData.COMPLETE_FONT_JSON.tabIndented(4)},
 				"text_alignment": "left",
 				"number_of_lines": 3,
 				"line_height": 7.1,
 				"letter_spacing": 9.88,
-				${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+				${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(4)}
 			},
 			"order": 16,
 			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}

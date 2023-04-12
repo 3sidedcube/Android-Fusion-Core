@@ -10,7 +10,7 @@ object StringExtensions {
 	/**
 	 * Trims the outer curly brackets and any whitespace from this JSON-formatted [String]
 	 */
-	fun String.trimJsonContainer() = this.trimStart(' ', '\t', '\n', '{').trimEnd(' ', '\t', '\n').trimEnd('}')
+	fun String.trimJsonContainer() = this.trimStart(' ', '\t', '\n', '{').trimEnd(' ', '\t', '\n').trimEnd('}').trimEnd('\n')
 
 	/**
 	 * Removes the class from this JSON-formatted [String]

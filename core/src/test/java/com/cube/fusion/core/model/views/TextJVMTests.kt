@@ -1,6 +1,9 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
+import com.cube.fusion.core.model.action.EmailAction
+import com.cube.fusion.core.model.action.EmailActionTestData
 import org.junit.Test
 
 /**
@@ -24,6 +27,24 @@ class TextJVMTests {
 	 */
 	@Test
 	fun testCompleteTextDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		TextTestData.COMPLETE_TEXT,
+		TextTestData.COMPLETE_TEXT_JSON
+	)
+
+	/**
+	 * Test that an [Text] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsTextSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		Text(),
+		TextTestData.NO_ARGS_TEXT_JSON
+	)
+
+	/**
+	 * Test that an [Text] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteTextSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		TextTestData.COMPLETE_TEXT,
 		TextTestData.COMPLETE_TEXT_JSON
 	)

@@ -1,6 +1,9 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
+import com.cube.fusion.core.model.action.EmailAction
+import com.cube.fusion.core.model.action.EmailActionTestData
 import org.junit.Test
 
 /**
@@ -24,6 +27,24 @@ class ListItemJVMTests {
 	 */
 	@Test
 	fun testCompleteListItemDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		ListItemTestData.COMPLETE_LIST_ITEM,
+		ListItemTestData.COMPLETE_LIST_ITEM_JSON
+	)
+
+	/**
+	 * Test that an [ListItem] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsListItemSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		ListItem(),
+		ListItemTestData.NO_ARGS_LIST_ITEM_JSON
+	)
+
+	/**
+	 * Test that an [ListItem] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteListItemSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		ListItemTestData.COMPLETE_LIST_ITEM,
 		ListItemTestData.COMPLETE_LIST_ITEM_JSON
 	)

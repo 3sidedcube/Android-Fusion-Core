@@ -26,8 +26,8 @@ object DividerTestData {
 	val COMPLETE_DIVIDER_JSON = """
 		{
 			"class": "Divider",
-			"stroke_width": "54.2",
-			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(3)}
+			"stroke_width": 54.2,
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(2)}
 		}
 	""".trimIndent()
 

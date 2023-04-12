@@ -18,7 +18,8 @@ object StringExtensions {
 	fun String.withoutClass() = this.replace(Regex("\"class\": \"[a-zA-Z]+\","), "")
 
 	/**
-	 * Indents all but the first line of the JSON data by a given amount
+	 * Indents all but the first line of the JSON data by a given amount.
+	 * @param tabs The number of tabs to indent by.
 	 */
 	fun String.tabIndented(tabs: Int): String {
 		val indent = "\t".repeat(tabs)

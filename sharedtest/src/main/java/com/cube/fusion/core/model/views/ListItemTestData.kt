@@ -29,6 +29,7 @@ object ListItemTestData {
 	val COMPLETE_LIST_ITEM_JSON = """
 		{
 			"class": "ListItem",
+			"image": ${ImageTestData.COMPLETE_IMAGE_JSON.tabIndented(3)},
 			"title": ${TextTestData.COMPLETE_TEXT_JSON.tabIndented(3)},
 			"subtitle": {
 				"class": "Text",
@@ -39,11 +40,10 @@ object ListItemTestData {
 				"number_of_lines": 3,
 				"line_height": 7.1,
 				"letter_spacing": 9.88,
-				${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(4)}
+				${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(3)}
 			},
-			"image": ${ImageTestData.COMPLETE_IMAGE_JSON.tabIndented(3)},
 			"action": ${EmailActionTestData.COMPLETE_EMAIL_ACTION_JSON.tabIndented(3)},
-			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(3)}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(2)}
 		}
 	""".trimIndent()
 

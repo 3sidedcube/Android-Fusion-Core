@@ -20,7 +20,7 @@ object FontTestData {
 		{
 			"name": "Open Sans",
 			"weight": "regular",
-			"size": 22
+			"size": 22.0
 		}
 	""".trimIndent()
 

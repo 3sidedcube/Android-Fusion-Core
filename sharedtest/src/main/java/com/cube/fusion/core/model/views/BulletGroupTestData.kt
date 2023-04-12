@@ -43,24 +43,24 @@ object BulletGroupTestData {
 						"number_of_lines": 81,
 						"line_height": 2.23,
 						"letter_spacing": 1.11,
-						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(6)}
+						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(5)}
 					},
 					"subtitle": {
 						"class": "Text",
 						"text_color": "#DDEECC",
 						"content": "BulletSubtitle2TextContent",
-						"font": ${FontTestData.COMPLETE_FONT_JSON},
+						"font": ${FontTestData.COMPLETE_FONT_JSON.tabIndented(6)},
 						"text_alignment": "justified",
 						"number_of_lines": 33,
 						"line_height": 7.19,
 						"letter_spacing": 92.88,
-						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(6)}
+						${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(5)}
 					},
 					"order": 32,
-					${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(5)}
+					${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(4)}
 				}
 			],
-			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(3)}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(2)}
 		}
 	""".trimIndent()
 

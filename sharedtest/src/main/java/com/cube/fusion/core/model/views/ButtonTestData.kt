@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.extensions.StringExtensions.withoutClass
 import com.cube.fusion.core.model.action.LinkActionTestData
@@ -27,8 +28,8 @@ object ButtonTestData {
 	val COMPLETE_BUTTON_JSON = """
 		{
 			"class": "Button",
-			"action": ${LinkActionTestData.COMPLETE_LINK_ACTION_JSON},
-			${TextTestData.COMPLETE_TEXT_JSON.trimJsonContainer().withoutClass()}
+			"action": ${LinkActionTestData.COMPLETE_LINK_ACTION_JSON.tabIndented(3)},
+			${TextTestData.COMPLETE_TEXT_JSON.trimJsonContainer().withoutClass().tabIndented(2).trimStart('\t')}
 		}
 	""".trimIndent()
 

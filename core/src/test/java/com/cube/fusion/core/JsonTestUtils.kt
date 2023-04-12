@@ -62,7 +62,9 @@ object JsonTestUtils {
 	 */
 	fun <T> assertEqualityFromJsonSerialisation(inObj: T, inStr: String, resolvers: List<ViewResolver>? = null)
 	{
-		val mapper = resolvers?.objectMapper() ?: ObjectMapper()
+		val mapper = resolvers?.objectMapper() ?: ObjectMapper().apply {
+			disable(SerializationFeature.FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS)
+		}
 		mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL)
 		mapper.setDefaultPrettyPrinter(customPrettyPrinter)
 		mapper.enable(SerializationFeature.INDENT_OUTPUT)

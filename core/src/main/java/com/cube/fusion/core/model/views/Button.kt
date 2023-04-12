@@ -2,6 +2,7 @@ package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.model.Model
 import com.cube.fusion.core.model.action.Action
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonTypeInfo
 import com.fasterxml.jackson.annotation.JsonUnwrapped
 import kotlinx.parcelize.Parcelize
@@ -18,6 +19,7 @@ import kotlinx.parcelize.Parcelize
 class Button(
 	var action: Action? = null,
 	@field:JsonUnwrapped
+	@field:JsonIgnoreProperties("class")
 	@field:JsonTypeInfo(
 		use = JsonTypeInfo.Id.NAME,
 		include = JsonTypeInfo.As.PROPERTY,

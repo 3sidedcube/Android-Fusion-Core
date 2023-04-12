@@ -2,6 +2,7 @@ package com.cube.fusion.core.utils
 
 import com.cube.fusion.core.resolver.ViewResolver
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.SerializationFeature
 
 /**
  * Set of extension functions relevant to the Core Fusion library
@@ -19,4 +20,5 @@ fun Collection<ViewResolver>.objectMapper() = ObjectMapper().apply {
 	this@objectMapper.forEach {
 		registerSubtypes(it.resolveView())
 	}
+	disable(SerializationFeature.FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS)
 }

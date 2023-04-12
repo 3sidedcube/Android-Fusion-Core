@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model.views
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.resolver.TrivialViewResolver
 import com.cube.fusion.core.resolver.ViewResolver
@@ -38,15 +39,15 @@ object ScreenTestData {
 		{
 			"class": "Screen",
 			"children": [
-				${BulletGroupTestData.COMPLETE_BULLET_GROUP_JSON},
-				${BulletTestData.COMPLETE_BULLET_JSON},
-				${ButtonTestData.COMPLETE_BUTTON_JSON},
-				${DividerTestData.COMPLETE_DIVIDER_JSON},
-				${ImageTestData.COMPLETE_IMAGE_JSON},
-				${ListItemTestData.COMPLETE_LIST_ITEM_JSON},
-				${TextTestData.COMPLETE_TEXT_JSON}
+				${BulletGroupTestData.COMPLETE_BULLET_GROUP_JSON.tabIndented(4)},
+				${BulletTestData.COMPLETE_BULLET_JSON.tabIndented(4)},
+				${ButtonTestData.COMPLETE_BUTTON_JSON.tabIndented(4)},
+				${DividerTestData.COMPLETE_DIVIDER_JSON.tabIndented(4)},
+				${ImageTestData.COMPLETE_IMAGE_JSON.tabIndented(4)},
+				${ListItemTestData.COMPLETE_LIST_ITEM_JSON.tabIndented(4)},
+				${TextTestData.COMPLETE_TEXT_JSON.tabIndented(4)}
 			],
-			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer()}
+			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(2)}
 		}
 	""".trimIndent()
 

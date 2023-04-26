@@ -4,7 +4,7 @@ import com.cube.fusion.core.model.Model
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class TestExtension(
-	val localisation: TestLocalisationExtension? = null,
-	val analytics: TestAnalyticsExtension? = null
-) : Model()
+class TestLocalisationExtension(
+	val localisedText: Map<String, String> = emptyMap(),
+	val defaultLanguage: String? = null
+): Model()

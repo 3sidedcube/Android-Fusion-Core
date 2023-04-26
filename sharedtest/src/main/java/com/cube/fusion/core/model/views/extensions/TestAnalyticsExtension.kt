@@ -4,7 +4,8 @@ import com.cube.fusion.core.model.Model
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class TestExtension(
-	val localisation: TestLocalisationExtension? = null,
-	val analytics: TestAnalyticsExtension? = null
-) : Model()
+class TestAnalyticsExtension(
+	val eventKey: String? = null,
+	val paramKey: String? = null,
+	val paramValue: String? = null
+): Model()

@@ -11,7 +11,7 @@ object FontTestData {
 	/**
 	 * The JSON data expected to parse to an instance of [Font] constructed with no arguments
 	 */
-	const val NO_ARGS_FONT_JSON = "{}"
+	const val NO_ARGS_FONT_JSON = "{ }"
 
 	/**
 	 * The JSON data expected to parse to an instance of [Font] with every property specified as a non-default value

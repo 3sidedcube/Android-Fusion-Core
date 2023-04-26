@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
 import org.junit.Test
 
@@ -24,6 +25,24 @@ class ShadowJVMTests {
 	 */
 	@Test
 	fun testCompleteShadowDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		ShadowTestData.COMPLETE_SHADOW,
+		ShadowTestData.COMPLETE_SHADOW_JSON
+	)
+
+	/**
+	 * Test that a [Shadow] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsShadowSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		Shadow(),
+		ShadowTestData.DEFAULT_SHADOW_JSON
+	)
+
+	/**
+	 * Test that a [Shadow] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteShadowSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		ShadowTestData.COMPLETE_SHADOW,
 		ShadowTestData.COMPLETE_SHADOW_JSON
 	)

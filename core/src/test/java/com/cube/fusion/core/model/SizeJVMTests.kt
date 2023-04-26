@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
 import org.junit.Test
 
@@ -24,6 +25,24 @@ class SizeJVMTests {
 	 */
 	@Test
 	fun testCompleteSizeDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		SizeTestData.COMPLETE_SIZE,
+		SizeTestData.COMPLETE_SIZE_JSON
+	)
+
+	/**
+	 * Test that a [Size] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsSizeSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		Size(),
+		SizeTestData.DEFAULT_SIZE_JSON
+	)
+
+	/**
+	 * Test that a [Size] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteSizeSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		SizeTestData.COMPLETE_SIZE,
 		SizeTestData.COMPLETE_SIZE_JSON
 	)

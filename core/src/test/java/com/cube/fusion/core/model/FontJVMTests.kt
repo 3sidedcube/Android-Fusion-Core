@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
 import org.junit.Test
 
@@ -24,6 +25,24 @@ class FontJVMTests {
 	 */
 	@Test
 	fun testCompleteFontDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		FontTestData.COMPLETE_FONT,
+		FontTestData.COMPLETE_FONT_JSON
+	)
+
+	/**
+	 * Test that a [Font] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsFontSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		Font(),
+		FontTestData.NO_ARGS_FONT_JSON
+	)
+
+	/**
+	 * Test that a [Font] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteFontSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		FontTestData.COMPLETE_FONT,
 		FontTestData.COMPLETE_FONT_JSON
 	)

@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
 import org.junit.Test
 
@@ -24,6 +25,24 @@ class ImageSourceJVMTests {
 	 */
 	@Test
 	fun testCompleteImageSourceDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		ImageSourceTestData.COMPLETE_IMAGE_SOURCE,
+		ImageSourceTestData.COMPLETE_IMAGE_SOURCE_JSON
+	)
+
+	/**
+	 * Test that a [ImageSource] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsImageSourceSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		ImageSource(),
+		ImageSourceTestData.NO_ARGS_IMAGE_SOURCE_JSON
+	)
+
+	/**
+	 * Test that a [ImageSource] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteImageSourceSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		ImageSourceTestData.COMPLETE_IMAGE_SOURCE,
 		ImageSourceTestData.COMPLETE_IMAGE_SOURCE_JSON
 	)

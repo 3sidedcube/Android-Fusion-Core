@@ -35,7 +35,7 @@ class SizeJVMTests {
 	@Test
 	fun testNoArgsSizeSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		Size(),
-		SizeTestData.NO_ARGS_SIZE_JSON
+		SizeTestData.DEFAULT_SIZE_JSON
 	)
 
 	/**

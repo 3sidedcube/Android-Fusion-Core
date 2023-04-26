@@ -28,6 +28,19 @@ object ShadowTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [Shadow] constructed with no arguments
+	 */
+	val DEFAULT_SHADOW_JSON = """
+		{
+			"alpha": 1.0,
+			"x": 0.0,
+			"y": 0.0,
+			"blur": 0.0,
+			"spread": 0.0
+		}
+	""".trimIndent()
+
+	/**
 	 * An instance of [Shadow] expected to match the parsed value of [COMPLETE_SHADOW_JSON]
 	 */
 	val COMPLETE_SHADOW = Shadow(

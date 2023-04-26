@@ -44,7 +44,7 @@ class PaddingJVMTests {
 	@Test
 	fun testNoArgsPaddingSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		Padding(),
-		PaddingTestData.NO_ARGS_PADDING_JSON
+		PaddingTestData.DEFAULT_PADDING_JSON
 	)
 
 	/**

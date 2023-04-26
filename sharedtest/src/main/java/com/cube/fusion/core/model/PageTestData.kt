@@ -40,6 +40,18 @@ object PageTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [Page] constructed with no arguments
+	 */
+	val DEFAULT_PAGE_JSON = """
+		{
+			"id": "",
+			"slug": "",
+			"title": "",
+			"class": "Page"
+		}
+	""".trimIndent()
+
+	/**
 	 * An instance of [Page] expected to match the parsed value of [COMPLETE_PAGE_JSON]
 	 */
 	val COMPLETE_PAGE = Page(

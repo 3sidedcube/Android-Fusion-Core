@@ -24,6 +24,16 @@ object SizeTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [Size] constructed with no arguments
+	 */
+	val DEFAULT_SIZE_JSON = """
+		{
+			"width": 0.0,
+			"height": 0.0
+		}
+	""".trimIndent()
+
+	/**
 	 * An instance of [Size] expected to match the parsed value of [COMPLETE_SIZE_JSON]
 	 */
 	val COMPLETE_SIZE = Size(

@@ -44,7 +44,7 @@ class MarginJVMTests {
 	@Test
 	fun testNoArgsMarginSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		Margin(),
-		MarginTestData.NO_ARGS_MARGIN_JSON
+		MarginTestData.DEFAULT_MARGIN_JSON
 	)
 
 	/**

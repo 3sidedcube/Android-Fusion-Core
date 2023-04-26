@@ -24,6 +24,15 @@ object BorderTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [Border] constructed with no arguments
+	 */
+	val DEFAULT_BORDER_JSON = """
+		{
+			"stroke_width": 0.0
+		}
+	""".trimIndent()
+
+	/**
 	 * An instance of [Border] expected to match the parsed value of [COMPLETE_BORDER_JSON]
 	 */
 	val COMPLETE_BORDER = Border(

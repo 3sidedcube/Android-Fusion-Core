@@ -35,7 +35,7 @@ class ShadowJVMTests {
 	@Test
 	fun testNoArgsShadowSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		Shadow(),
-		ShadowTestData.NO_ARGS_SHADOW_JSON
+		ShadowTestData.DEFAULT_SHADOW_JSON
 	)
 
 	/**

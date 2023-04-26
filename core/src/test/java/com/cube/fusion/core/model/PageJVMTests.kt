@@ -37,7 +37,7 @@ class PageJVMTests {
 	@Test
 	fun testNoArgsPageSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		Page(),
-		PageTestData.NO_ARGS_PAGE_JSON
+		PageTestData.DEFAULT_PAGE_JSON
 	)
 
 	/**

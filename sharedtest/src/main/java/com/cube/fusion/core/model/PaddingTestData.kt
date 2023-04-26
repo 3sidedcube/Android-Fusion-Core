@@ -38,6 +38,18 @@ object PaddingTestData {
 	""".trimIndent()
 
 	/**
+	 * The JSON data expected to be serialised from an instance of [Padding] constructed with no arguments
+	 */
+	val DEFAULT_PADDING_JSON = """
+		{
+			"left": 0.0,
+			"top": 0.0,
+			"right": 0.0,
+			"bottom": 0.0
+		}
+	""".trimIndent()
+
+	/**
 	 * An instance of [Padding] expected to match the parsed value of [COMPLETE_PADDING_JSON]
 	 */
 	val COMPLETE_PADDING = Padding(

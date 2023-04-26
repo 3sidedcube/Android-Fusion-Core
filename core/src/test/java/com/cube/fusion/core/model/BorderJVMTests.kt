@@ -35,7 +35,7 @@ class BorderJVMTests {
 	@Test
 	fun testNoArgsBorderSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		Border(),
-		BorderTestData.NO_ARGS_BORDER_JSON
+		BorderTestData.DEFAULT_BORDER_JSON
 	)
 
 	/**

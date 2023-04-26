@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model
 
+import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.model.views.Bullet
 import com.cube.fusion.core.model.views.BulletGroup
 import com.cube.fusion.core.model.views.Button
@@ -30,12 +31,12 @@ object PageTestData {
 	 */
 	val COMPLETE_PAGE_JSON = """
 		{
-			"class": "Page",
 			"id": "page_id",
 			"slug": "page_slug",
 			"title": "page_title",
-			"analytics_screen_view": "page_analytics_screen_view",
-			"screen": ${ScreenTestData.COMPLETE_SCREEN_JSON}
+			"screen": ${ScreenTestData.COMPLETE_SCREEN_JSON.tabIndented(3)},
+			"class": "Page",
+			"analytics_screen_view": "page_analytics_screen_view"
 		}
 	""".trimIndent()
 

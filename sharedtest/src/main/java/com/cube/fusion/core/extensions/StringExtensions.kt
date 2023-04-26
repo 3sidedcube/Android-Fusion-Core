@@ -15,7 +15,7 @@ object StringExtensions {
 	/**
 	 * Removes the class from this JSON-formatted [String]
 	 */
-	fun String.withoutClass() = this.replace(Regex("\"class\": \"[a-zA-Z]+\",\n"), "")
+	fun String.withoutClass() = this.replaceFirst(Regex("\"class\": \"[a-zA-Z]+\",\n"), "")
 
 	/**
 	 * Indents all but the first line of the JSON data by a given amount.

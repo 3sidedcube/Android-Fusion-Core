@@ -5,6 +5,7 @@ import com.cube.fusion.core.model.views.Bullet
 import com.cube.fusion.core.model.views.BulletGroup
 import com.cube.fusion.core.model.views.Button
 import com.cube.fusion.core.model.views.Divider
+import com.cube.fusion.core.model.views.ExtensionTestData
 import com.cube.fusion.core.model.views.Image
 import com.cube.fusion.core.model.views.ListItem
 import com.cube.fusion.core.model.views.Screen
@@ -74,6 +75,7 @@ object PageTestData {
 		TrivialViewResolver(Image::class.java),
 		TrivialViewResolver(ListItem::class.java),
 		TrivialViewResolver(Screen::class.java),
-		TrivialViewResolver(Text::class.java)
+		TrivialViewResolver(Text::class.java),
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 }

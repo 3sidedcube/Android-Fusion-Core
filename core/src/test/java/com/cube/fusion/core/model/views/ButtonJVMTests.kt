@@ -28,7 +28,8 @@ class ButtonJVMTests {
 	@Test
 	fun testCompleteButtonDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
 		ButtonTestData.COMPLETE_BUTTON,
-		ButtonTestData.COMPLETE_BUTTON_JSON
+		ButtonTestData.COMPLETE_BUTTON_JSON,
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 
 	/**

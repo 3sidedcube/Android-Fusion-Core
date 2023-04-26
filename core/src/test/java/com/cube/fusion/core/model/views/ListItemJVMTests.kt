@@ -28,7 +28,8 @@ class ListItemJVMTests {
 	@Test
 	fun testCompleteListItemDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
 		ListItemTestData.COMPLETE_LIST_ITEM,
-		ListItemTestData.COMPLETE_LIST_ITEM_JSON
+		ListItemTestData.COMPLETE_LIST_ITEM_JSON,
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 
 	/**

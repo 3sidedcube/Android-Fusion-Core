@@ -2,6 +2,7 @@ package com.cube.fusion.core.model
 
 import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
+import com.cube.fusion.core.model.views.ExtensionTestData
 import org.junit.Test
 
 /**
@@ -46,6 +47,7 @@ class PageJVMTests {
 	@Test
 	fun testCompletePageSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		PageTestData.COMPLETE_PAGE,
-		PageTestData.COMPLETE_PAGE_JSON
+		PageTestData.COMPLETE_PAGE_JSON,
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 }

@@ -113,6 +113,7 @@ object BulletGroupTestData {
 	 */
 	val BULLET_GROUP_TEST_RESOLVERS = listOf<ViewResolver>(
 		TrivialViewResolver(Bullet::class.java),
-		TrivialViewResolver(Text::class.java)
+		TrivialViewResolver(Text::class.java),
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 }

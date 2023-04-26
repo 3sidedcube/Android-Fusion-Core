@@ -23,7 +23,8 @@ object BaseViewPropertiesTestData {
 			"padding": ${PaddingTestData.COMPLETE_PADDING_JSON.tabIndented(3)},
 			"margin": ${MarginTestData.COMPLETE_MARGIN_JSON.tabIndented(3)},
 			"border": ${BorderTestData.COMPLETE_BORDER_JSON.tabIndented(3)},
-			"shadow": ${ShadowTestData.COMPLETE_SHADOW_JSON.tabIndented(3)}
+			"shadow": ${ShadowTestData.COMPLETE_SHADOW_JSON.tabIndented(3)},
+			"extensions": ${ExtensionTestData.COMPLETE_EXTENSION_JSON.tabIndented(3)}
 		}
 	""".trimIndent()
 
@@ -36,6 +37,7 @@ object BaseViewPropertiesTestData {
 		padding = PaddingTestData.COMPLETE_PADDING,
 		margin = MarginTestData.COMPLETE_MARGIN,
 		border = BorderTestData.COMPLETE_BORDER,
-		shadow = ShadowTestData.COMPLETE_SHADOW
+		shadow = ShadowTestData.COMPLETE_SHADOW,
+		extensions = ExtensionTestData.COMPLETE_EXTENSION
 	)
 }

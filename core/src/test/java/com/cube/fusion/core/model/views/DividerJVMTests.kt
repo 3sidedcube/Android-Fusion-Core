@@ -28,7 +28,8 @@ class DividerJVMTests {
 	@Test
 	fun testCompleteDividerDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
 		DividerTestData.COMPLETE_DIVIDER,
-		DividerTestData.COMPLETE_DIVIDER_JSON
+		DividerTestData.COMPLETE_DIVIDER_JSON,
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 
 	/**

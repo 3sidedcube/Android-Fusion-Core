@@ -3,6 +3,7 @@ package com.cube.fusion.core.model.views
 import android.os.Parcelable
 import com.cube.fusion.core.model.Border
 import com.cube.fusion.core.model.Margin
+import com.cube.fusion.core.model.Model
 import com.cube.fusion.core.model.Padding
 import com.cube.fusion.core.model.Shadow
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
@@ -32,5 +33,6 @@ class BaseViewProperties (
 	val padding: Padding? = null,
 	val margin: Margin? = null,
 	val border: Border? = null,
-	val shadow: Shadow? = null
+	val shadow: Shadow? = null,
+	val extensions: Model? = null
 ): Parcelable

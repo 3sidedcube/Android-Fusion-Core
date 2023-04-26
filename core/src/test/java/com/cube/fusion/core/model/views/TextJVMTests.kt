@@ -28,7 +28,8 @@ class TextJVMTests {
 	@Test
 	fun testCompleteTextDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
 		TextTestData.COMPLETE_TEXT,
-		TextTestData.COMPLETE_TEXT_JSON
+		TextTestData.COMPLETE_TEXT_JSON,
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 
 	/**

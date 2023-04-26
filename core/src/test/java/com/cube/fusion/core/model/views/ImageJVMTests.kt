@@ -28,7 +28,8 @@ class ImageJVMTests {
 	@Test
 	fun testCompleteImageDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
 		ImageTestData.COMPLETE_IMAGE,
-		ImageTestData.COMPLETE_IMAGE_JSON
+		ImageTestData.COMPLETE_IMAGE_JSON,
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 
 	/**
@@ -46,6 +47,7 @@ class ImageJVMTests {
 	@Test
 	fun testCompleteImageSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		ImageTestData.COMPLETE_IMAGE,
-		ImageTestData.COMPLETE_IMAGE_JSON
+		ImageTestData.COMPLETE_IMAGE_JSON,
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 }

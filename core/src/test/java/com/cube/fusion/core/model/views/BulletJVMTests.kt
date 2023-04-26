@@ -28,7 +28,8 @@ class BulletJVMTests {
 	@Test
 	fun testCompleteBulletDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
 		BulletTestData.COMPLETE_BULLET,
-		BulletTestData.COMPLETE_BULLET_JSON
+		BulletTestData.COMPLETE_BULLET_JSON,
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 
 	/**

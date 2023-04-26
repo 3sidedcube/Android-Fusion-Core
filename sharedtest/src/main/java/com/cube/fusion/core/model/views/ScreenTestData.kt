@@ -77,6 +77,7 @@ object ScreenTestData {
 		TrivialViewResolver(Divider::class.java),
 		TrivialViewResolver(Image::class.java),
 		TrivialViewResolver(ListItem::class.java),
-		TrivialViewResolver(Text::class.java)
+		TrivialViewResolver(Text::class.java),
+		ExtensionTestData.EXTENSION_RESOLVER
 	)
 }

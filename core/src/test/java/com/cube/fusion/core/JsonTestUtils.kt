@@ -1,5 +1,6 @@
 package com.cube.fusion.core
 
+import android.view.View
 import com.cube.fusion.core.resolver.ViewResolver
 import com.cube.fusion.core.utils.objectMapper
 import com.fasterxml.jackson.annotation.JsonInclude
@@ -53,6 +54,16 @@ object JsonTestUtils {
 	}
 
 	/**
+	 * Assert that an object is equal to the JSON deserialisation of its JSON data
+	 *
+	 * @param T The type of the object to deserialise.
+	 * @param inObj The expected [T] that [inStr] should deserialise to.
+	 * @param inStr The JSON representation of [inObj].
+	 * @param resolvers The list of view resolvers to use for deserialisation, if necessary.
+	 */
+	inline fun <reified T> assertEqualityFromJsonDeserialisation(inObj: T, inStr: String, vararg resolvers: ViewResolver) = assertEqualityFromJsonDeserialisation(inObj, inStr, resolvers.toList())
+
+	/**
 	 * Assert that an object correctly serialises to JSON
 	 *
 	 * @param T The type of the object to serialise.
@@ -71,4 +82,14 @@ object JsonTestUtils {
 		val writtenString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(inObj)
 		Assertions.assertThat(writtenString).isEqualTo(inStr)
 	}
+
+	/**
+	 * Assert that an object correctly serialises to JSON
+	 *
+	 * @param T The type of the object to serialise.
+	 * @param inObj The instance of [T] that should serialise to [inStr].
+	 * @param inStr The JSON representation of [inObj].
+	 * @param resolvers The list of view resolvers to use for serialisation, if necessary.
+	 */
+	fun <T> assertEqualityFromJsonSerialisation(inObj: T, inStr: String, vararg resolvers: ViewResolver) = assertEqualityFromJsonSerialisation(inObj, inStr, resolvers.toList())
 }

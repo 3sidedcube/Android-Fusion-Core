@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
 import org.junit.Test
 
@@ -35,5 +36,23 @@ class PaddingJVMTests {
 	fun testZeroPaddingDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
 		Padding.zeroPadding(),
 		PaddingTestData.ZERO_PADDING_JSON
+	)
+
+	/**
+	 * Test that a [Padding] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsPaddingSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		Padding(),
+		PaddingTestData.NO_ARGS_PADDING_JSON
+	)
+
+	/**
+	 * Test that a [Padding] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompletePaddingSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		PaddingTestData.COMPLETE_PADDING,
+		PaddingTestData.COMPLETE_PADDING_JSON
 	)
 }

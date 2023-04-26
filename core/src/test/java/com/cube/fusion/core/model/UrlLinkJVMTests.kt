@@ -1,5 +1,6 @@
 package com.cube.fusion.core.model
 
+import com.cube.fusion.core.JsonTestUtils
 import com.cube.fusion.core.JsonTestUtils.assertEqualityFromJsonDeserialisation
 import org.junit.Test
 
@@ -24,6 +25,24 @@ class UrlLinkJVMTests {
 	 */
 	@Test
 	fun testCompleteUrlLinkDeserialisationEquality() = assertEqualityFromJsonDeserialisation(
+		UrlLinkTestData.COMPLETE_URL_LINK,
+		UrlLinkTestData.COMPLETE_URL_LINK_JSON
+	)
+
+	/**
+	 * Test that a [UrlLink] instance with no arguments serialises correctly
+	 */
+	@Test
+	fun testNoArgsUrlLinkSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
+		UrlLink(),
+		UrlLinkTestData.NO_ARGS_URL_LINK_JSON
+	)
+
+	/**
+	 * Test that a [UrlLink] instance with all arguments specified serialises correctly
+	 */
+	@Test
+	fun testCompleteUrlLinkSerialisationEquality() = JsonTestUtils.assertEqualityFromJsonSerialisation(
 		UrlLinkTestData.COMPLETE_URL_LINK,
 		UrlLinkTestData.COMPLETE_URL_LINK_JSON
 	)

@@ -11,7 +11,7 @@ object ImageSourceTestData {
 	/**
 	 * The JSON data expected to parse to an instance of [ImageSource] constructed with no arguments
 	 */
-	const val NO_ARGS_IMAGE_SOURCE_JSON = "{}"
+	const val NO_ARGS_IMAGE_SOURCE_JSON = "{ }"
 
 	/**
 	 * The JSON data expected to parse to an instance of [ImageSource] with every property specified as a non-default value

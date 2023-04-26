@@ -11,7 +11,7 @@ object UrlLinkTestData {
 	/**
 	 * The JSON data expected to parse to an instance of [UrlLink] constructed with no arguments
 	 */
-	const val NO_ARGS_URL_LINK_JSON = "{}"
+	const val NO_ARGS_URL_LINK_JSON = "{ }"
 
 	/**
 	 * The JSON data expected to parse to an instance of [UrlLink] with every property specified as a non-default value

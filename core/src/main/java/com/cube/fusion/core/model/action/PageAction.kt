@@ -14,7 +14,7 @@ import kotlinx.parcelize.Parcelize
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class PageAction(var entry: UrlLink? = null) : Action() {
+data class PageAction(var entry: UrlLink? = null) : Action() {
 	override fun extractClick(): String? {
 		return entry?.apiUrl
 	}

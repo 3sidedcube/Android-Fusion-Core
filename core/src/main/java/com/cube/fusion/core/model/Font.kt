@@ -27,7 +27,7 @@ import kotlinx.parcelize.Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class Font(
+data class Font(
 	var name: String? = null,
 	var weight: Weight? = null,
 	var size: Float? = null

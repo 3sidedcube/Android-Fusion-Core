@@ -26,7 +26,7 @@ import kotlinx.parcelize.Parcelize
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @Parcelize
-class BaseViewProperties (
+data class BaseViewProperties (
 	val backgroundColor: String? = null,
 	val cornerRadius: Float? = null,
 	val padding: Padding? = null,

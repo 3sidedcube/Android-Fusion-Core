@@ -19,7 +19,7 @@ import kotlinx.parcelize.Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class Border(
+data class Border(
 	var strokeWidth: Float = 0f,
 	var color: String? = null
 ): Parcelable

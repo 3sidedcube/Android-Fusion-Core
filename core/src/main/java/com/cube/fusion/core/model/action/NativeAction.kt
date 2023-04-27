@@ -15,7 +15,7 @@ import kotlinx.parcelize.Parcelize
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class NativeAction(var link: String? = null) : Action(), Parcelable {
+data class NativeAction(var link: String? = null) : Action(), Parcelable {
 	override fun extractClick(): String? {
 		return link
 	}

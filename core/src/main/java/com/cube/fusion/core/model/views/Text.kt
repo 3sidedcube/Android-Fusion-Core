@@ -27,7 +27,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Text (
+data class Text (
 	val textColor: String? = null,
 	val content: String? = null,
 	val font: Font? = null,

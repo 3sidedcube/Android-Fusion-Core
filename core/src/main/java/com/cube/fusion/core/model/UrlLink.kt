@@ -20,7 +20,7 @@ import kotlinx.parcelize.Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class UrlLink (
+data class UrlLink (
 	val id: String? = null,
 	val title: String? = null,
 	val apiUrl: String? = null

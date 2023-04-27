@@ -20,7 +20,7 @@ import kotlinx.parcelize.Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class ImageSource(
+data class ImageSource(
 	var url: String? = null,
 	var id: String? = null,
 	var permalink: String? = null,

@@ -18,7 +18,7 @@ import kotlinx.parcelize.Parcelize
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class EmailAction(
+data class EmailAction(
 	val to: ArrayList<String>? = null,
 	val cc: ArrayList<String>? = null,
 	val bcc: ArrayList<String>? = null,

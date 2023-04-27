@@ -15,7 +15,7 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
-class BulletGroup(
+data class BulletGroup(
 	val children: ArrayList<Bullet> = ArrayList(),
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model()

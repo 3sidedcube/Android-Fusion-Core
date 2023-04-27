@@ -18,7 +18,7 @@ import kotlinx.parcelize.Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class LinkAction(
+data class LinkAction(
 	var link: String? = null,
 	var inApp: Boolean = false
 ) : Action() {

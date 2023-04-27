@@ -22,7 +22,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-class ListItem(
+data class ListItem(
 	val image: Image? = null,
 	val title: Text? = null,
 	val subtitle: Text? = null,

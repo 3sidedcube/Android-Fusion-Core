@@ -23,7 +23,7 @@ import kotlinx.parcelize.Parcelize
  * @property blur the target gaussian blur factor for the shadow, in density pixels (dp)
  * @property spread the distance that the shadow should spread from the edge of the view, in density pixels (dp)
  */
-class Shadow(
+data class Shadow(
 	val color: String? = null,
 	val alpha: Float = 1f,
 	val x: Float = 0f,

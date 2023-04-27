@@ -25,7 +25,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
-class Page(
+data class Page(
 	val id: String = "",
 	val slug: String = "",
 	val title: String = "",

@@ -16,7 +16,7 @@ import kotlinx.parcelize.Parcelize
  * @property action the action to handle when the button is pressed
  */
 @Parcelize
-class Button(
+data class Button(
 	var action: Action? = null,
 	@field:JsonUnwrapped
 	@field:JsonIgnoreProperties("class")

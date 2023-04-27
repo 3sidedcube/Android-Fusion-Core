@@ -20,7 +20,7 @@ import kotlinx.parcelize.Parcelize
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Parcelize
-class Padding(
+data class Padding(
 	val left: Float = 0.0f,
 	val top: Float = 0.0f,
 	val right: Float = 0.0f,

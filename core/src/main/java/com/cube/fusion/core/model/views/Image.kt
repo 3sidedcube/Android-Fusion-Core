@@ -25,7 +25,7 @@ data class Image (
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model() {
 	/**
-	 * Interface for pre-processing [Image] with concrete type
+	 * Interface with concrete type for pre-processing [Image]
 	 */
 	interface Preprocessor: FusionDataPreprocessor<Image>
 }

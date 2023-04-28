@@ -24,7 +24,7 @@ data class Divider (
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model() {
 	/**
-	 * Interface for pre-processing [Divider] with concrete type
+	 * Interface with concrete type for pre-processing [Divider]
 	 */
 	interface Preprocessor: FusionDataPreprocessor<Divider>
 }

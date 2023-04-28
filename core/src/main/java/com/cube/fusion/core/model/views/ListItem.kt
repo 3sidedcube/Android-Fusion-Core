@@ -31,7 +31,7 @@ data class ListItem(
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model() {
 	/**
-	 * Interface for pre-processing [ListItem] with concrete type
+	 * Interface with concrete type for pre-processing [ListItem]
 	 */
 	interface Preprocessor: FusionDataPreprocessor<ListItem>
 }

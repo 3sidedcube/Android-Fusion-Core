@@ -36,7 +36,7 @@ data class BaseViewProperties (
 	val shadow: Shadow? = null
 ): Parcelable {
 	/**
-	 * Interface for pre-processing [BaseViewProperties] with concrete type
+	 * Interface with concrete type for pre-processing [BaseViewProperties]
 	 */
 	interface Preprocessor: FusionDataPreprocessor<BaseViewProperties>
 }

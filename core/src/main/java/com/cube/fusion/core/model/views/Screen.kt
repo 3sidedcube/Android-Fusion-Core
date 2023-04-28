@@ -24,7 +24,7 @@ data class Screen(
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model() {
 	/**
-	 * Interface for pre-processing [Screen] with concrete type
+	 * Interface with concrete type for pre-processing [Screen]
 	 */
 	interface Preprocessor: FusionDataPreprocessor<Screen>
 }

@@ -30,7 +30,7 @@ data class Button(
 	val baseProperties: Text = Text()
 ) : Model() {
 	/**
-	 * Interface for pre-processing [Button] with concrete type
+	 * Interface with concrete type for pre-processing [Button]
 	 */
 	interface Preprocessor: FusionDataPreprocessor<Button>
 }

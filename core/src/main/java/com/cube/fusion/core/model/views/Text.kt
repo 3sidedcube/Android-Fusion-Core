@@ -39,7 +39,7 @@ data class Text (
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model() {
 	/**
-	 * Interface for pre-processing [Text] with concrete type
+	 * Interface with concrete type for pre-processing [Text]
 	 */
 	interface Preprocessor: FusionDataPreprocessor<Text>
 }

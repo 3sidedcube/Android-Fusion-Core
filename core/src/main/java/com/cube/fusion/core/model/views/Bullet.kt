@@ -25,7 +25,7 @@ data class Bullet(
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model() {
 	/**
-	 * Interface for pre-processing [Bullet] with concrete type
+	 * Interface with concrete type for pre-processing [Bullet]
 	 */
 	interface Preprocessor: FusionDataPreprocessor<Bullet>
 }

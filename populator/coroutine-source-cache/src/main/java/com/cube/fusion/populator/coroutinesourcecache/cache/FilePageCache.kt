@@ -3,7 +3,7 @@ package com.cube.fusion.populator.coroutinesourcecache.cache
 import android.content.Context
 import com.cube.fusion.core.model.Page
 import com.cube.fusion.core.resolver.ViewResolver
-import com.cube.fusion.core.utils.objectMapper
+import com.cube.fusion.core.utils.CollectionExtensions.objectMapper
 import java.io.File
 import java.lang.ref.WeakReference
 

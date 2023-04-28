@@ -3,7 +3,7 @@ package com.cube.fusion.populator.coroutinesourcecache.source
 import android.content.Context
 import com.cube.fusion.core.model.Page
 import com.cube.fusion.core.resolver.ViewResolver
-import com.cube.fusion.core.utils.objectMapper
+import com.cube.fusion.core.utils.CollectionExtensions.objectMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.InputStream

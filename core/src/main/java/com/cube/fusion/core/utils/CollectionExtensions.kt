@@ -10,15 +10,16 @@ import com.fasterxml.jackson.databind.SerializationFeature
  * Created by JR Mitchell on 10/March/2022.
  * Copyright ® 3SidedCube. All rights reserved.
  */
-
-/**
- * Convenience method to get an [ObjectMapper] instance from a collection of [ViewResolver]s
- *
- * @return an [ObjectMapper] instance with all of the resolved view types registered
- */
-fun Collection<ViewResolver>.objectMapper() = ObjectMapper().apply {
-	this@objectMapper.forEach {
-		registerSubtypes(it.resolveView())
+object CollectionExtensions {
+	/**
+	 * Convenience method to get an [ObjectMapper] instance from a collection of [ViewResolver]s
+	 *
+	 * @return an [ObjectMapper] instance with all of the resolved view types registered
+	 */
+	fun Collection<ViewResolver>.objectMapper() = ObjectMapper().apply {
+		this@objectMapper.forEach {
+			registerSubtypes(it.resolveView())
+		}
+		disable(SerializationFeature.FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS)
 	}
-	disable(SerializationFeature.FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS)
 }

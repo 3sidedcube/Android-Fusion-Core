@@ -1,7 +1,7 @@
 package com.cube.fusion.populator.retrofit.source
 
 import com.cube.fusion.core.resolver.ViewResolver
-import com.cube.fusion.core.utils.objectMapper
+import com.cube.fusion.core.utils.CollectionExtensions.objectMapper
 import com.cube.fusion.populator.coroutinesourcecache.source.FusionDataSource
 import com.cube.fusion.populator.retrofit.api.RetrofitAPI
 import kotlinx.coroutines.Dispatchers

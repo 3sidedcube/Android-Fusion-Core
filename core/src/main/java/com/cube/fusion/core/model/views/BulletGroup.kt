@@ -1,6 +1,7 @@
 package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.model.Model
+import com.cube.fusion.core.processor.FusionDataPreprocessor
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonUnwrapped
 import kotlinx.parcelize.Parcelize
@@ -18,4 +19,9 @@ import kotlinx.parcelize.Parcelize
 data class BulletGroup(
 	val children: ArrayList<Bullet> = ArrayList(),
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
-) : Model()
+) : Model() {
+	/**
+	 * Interface for pre-processing [BulletGroup] with concrete type
+	 */
+	interface Preprocessor: FusionDataPreprocessor<BulletGroup>
+}

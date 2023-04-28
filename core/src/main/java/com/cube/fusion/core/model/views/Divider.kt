@@ -1,6 +1,7 @@
 package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.model.Model
+import com.cube.fusion.core.processor.FusionDataPreprocessor
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonUnwrapped
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
@@ -21,4 +22,9 @@ import kotlinx.parcelize.Parcelize
 data class Divider (
 	val strokeWidth: Float? = null,
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
-) : Model()
+) : Model() {
+	/**
+	 * Interface for pre-processing [Divider] with concrete type
+	 */
+	interface Preprocessor: FusionDataPreprocessor<Divider>
+}

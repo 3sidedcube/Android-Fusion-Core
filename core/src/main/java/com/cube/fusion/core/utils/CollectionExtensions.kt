@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 
 /**
- * Set of extension functions relevant to the Core Fusion library
+ * Set of extension functions on Collection receivers relevant to the Core Fusion library
  *
  * Created by JR Mitchell on 10/March/2022.
  * Copyright ® 3SidedCube. All rights reserved.

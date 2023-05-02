@@ -1,7 +1,7 @@
 package com.cube.fusion.core
 
 import com.cube.fusion.core.resolver.ViewResolver
-import com.cube.fusion.core.utils.objectMapper
+import com.cube.fusion.core.utils.CollectionExtensions.objectMapper
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.core.JsonGenerator
 import com.fasterxml.jackson.core.util.DefaultIndenter

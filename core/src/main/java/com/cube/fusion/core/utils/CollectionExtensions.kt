@@ -28,41 +28,15 @@ object CollectionExtensions {
 	 * Convenience method to preprocess a model with a series of preprocessors
 	 * The processing steps will be applied in order of iteration
 	 *
-	 * @param model The model to pre-process
-	 * @param ModelType The type of [model]
-	 * @return An instance of [ModelType] created by chained application of the preprocessors in [this] in iteration order to [model]
+	 * @param model The model to preprocessing
+	 * @param T The type of [model]
+	 * @return An instance of [T] created by chained application of the preprocessors in [this] in iteration order to [model]
 	 */
-	fun <ModelType> Collection<FusionDataPreprocessor<ModelType>>.preprocess(model: ModelType): ModelType {
-		var outModel: ModelType = model
+	fun <T> Collection<FusionDataPreprocessor<T>>.preprocess(model: T): T {
+		var outModel: T = model
 		forEach { processor ->
 			outModel = processor.preprocess(outModel)
 		}
 		return outModel
 	}
-
-	/**
-	 * Convenience method to execute a block of code on data after applying pre-processing
-	 * The processing steps will be applied in order of iteration
-	 *
-	 * @param model The model to pre-process
-	 * @param ModelType The type of [model]
-	 * @param block The method to call with the pre-processed model as its argument
-	 * @param ReturnType The return type of [block]
-	 * @return The result of calling [block] on an instance of [ModelType] created by chained application of the preprocessors in [this] in iteration order to [model]
-	 */
-	inline fun <ModelType, ReturnType> Collection<FusionDataPreprocessor<ModelType>>.withPreprocessedData(model: ModelType, crossinline block: (ModelType) -> ReturnType) = preprocess(model).let(block)
-
-	/**
-	 * Convenience method to execute a block of code on nullable data after applying pre-processing
-	 * The processing steps will be applied in order of iteration
-	 *
-	 * @param model The model to pre-process, or null
-	 * @param ModelType The type of [model]
-	 * @param block The method to call with the pre-processed model as its argument
-	 * @param ReturnType The return type of [block]
-	 * @return The result of calling [block] on an instance of [ModelType] created by chained application of the preprocessors in [this] in iteration order to [model].
-	 *  If [model] is null, then this will simply be the result of calling [block] with a null argument.
-	 */
-	@JvmName("withPreprocessedNullableData")
-	inline fun <ModelType, ReturnType> Collection<FusionDataPreprocessor<ModelType>>.withPreprocessedData(model: ModelType?, crossinline block: (ModelType?) -> ReturnType) = model?.let { preprocess(it) }.let(block)
 }

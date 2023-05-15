@@ -2,7 +2,6 @@ package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.model.Model
 import com.cube.fusion.core.model.action.Action
-import com.cube.fusion.core.processor.FusionDataPreprocessor
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonTypeInfo
 import com.fasterxml.jackson.annotation.JsonUnwrapped
@@ -28,9 +27,4 @@ data class Button(
 		defaultImpl = Text::class
 	)
 	val baseProperties: Text = Text()
-) : Model() {
-	/**
-	 * Interface with concrete type for pre-processing [Button]
-	 */
-	interface Preprocessor: FusionDataPreprocessor<Button>
-}
+) : Model()

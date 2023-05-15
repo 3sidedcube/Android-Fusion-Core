@@ -5,7 +5,6 @@ import com.cube.fusion.core.model.Border
 import com.cube.fusion.core.model.Margin
 import com.cube.fusion.core.model.Padding
 import com.cube.fusion.core.model.Shadow
-import com.cube.fusion.core.processor.FusionDataPreprocessor
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 import kotlinx.parcelize.Parcelize
@@ -34,9 +33,4 @@ data class BaseViewProperties (
 	val margin: Margin? = null,
 	val border: Border? = null,
 	val shadow: Shadow? = null
-): Parcelable {
-	/**
-	 * Interface with concrete type for pre-processing [BaseViewProperties]
-	 */
-	interface Preprocessor: FusionDataPreprocessor<BaseViewProperties>
-}
+): Parcelable

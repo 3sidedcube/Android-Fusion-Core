@@ -3,7 +3,6 @@ package com.cube.fusion.core.model.views
 import com.cube.fusion.core.model.Font
 import com.cube.fusion.core.model.Model
 import com.cube.fusion.core.model.TextAlignment
-import com.cube.fusion.core.processor.FusionDataPreprocessor
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonUnwrapped
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
@@ -37,9 +36,4 @@ data class Text (
 	val lineHeight: Float? = null,
 	val letterSpacing: Float? = null,
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
-) : Model() {
-	/**
-	 * Interface with concrete type for pre-processing [Text]
-	 */
-	interface Preprocessor: FusionDataPreprocessor<Text>
-}
+) : Model()

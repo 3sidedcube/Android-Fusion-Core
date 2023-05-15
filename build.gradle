@@ -33,7 +33,7 @@ static def thisOrJitpackVersion(requiredVersion) {
 
 ext {
 	// Do not remove the call to thisOrJitpackVersion - this ensures that versions for all generated artifacts are aligned.
-	fusionLibVersion = thisOrJitpackVersion('v0.0.4-rc1')
+	fusionLibVersion = thisOrJitpackVersion('v0.0.4-rc2')
 }
 
 task clean(type: Delete) {

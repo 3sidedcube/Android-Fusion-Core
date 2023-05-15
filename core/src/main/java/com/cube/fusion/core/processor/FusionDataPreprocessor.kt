@@ -8,7 +8,7 @@ package com.cube.fusion.core.processor
  *
  * @param T The type of the data that this pre-processes
  */
-interface FusionDataPreprocessor <T> {
+fun interface FusionDataPreprocessor <T> {
 	/**
 	 * Pre-processes the supplied [data], transforming it into a new instance of [T]
 	 *

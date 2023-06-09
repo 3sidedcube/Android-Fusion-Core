@@ -2,6 +2,7 @@ package com.cube.fusion.core.model.views
 
 import com.cube.fusion.core.model.ImageSource
 import com.cube.fusion.core.model.Model
+import com.cube.fusion.core.model.Size
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonUnwrapped
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
@@ -21,5 +22,6 @@ import kotlinx.parcelize.Parcelize
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class Image (
 	val src: ImageSource? = null,
+	val fixedSize: Size? = null,
 	@field:JsonUnwrapped val baseProperties: BaseViewProperties = BaseViewProperties()
 ) : Model()

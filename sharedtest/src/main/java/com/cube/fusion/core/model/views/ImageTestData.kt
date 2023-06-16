@@ -3,6 +3,7 @@ package com.cube.fusion.core.model.views
 import com.cube.fusion.core.extensions.StringExtensions.tabIndented
 import com.cube.fusion.core.extensions.StringExtensions.trimJsonContainer
 import com.cube.fusion.core.model.ImageSourceTestData
+import com.cube.fusion.core.model.SizeTestData
 
 /**
  * Object containing useful data for [Image] test cases, for both JVM and instrumented tests
@@ -28,6 +29,7 @@ object ImageTestData {
 		{
 			"class": "Image",
 			"src": ${ImageSourceTestData.COMPLETE_IMAGE_SOURCE_JSON.tabIndented(3)},
+			"fixed_size": ${SizeTestData.COMPLETE_SIZE_JSON.tabIndented(3)},
 			${BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES_JSON.trimJsonContainer().tabIndented(2)}
 		}
 	""".trimIndent()
@@ -37,6 +39,7 @@ object ImageTestData {
 	 */
 	val COMPLETE_IMAGE = Image(
 		src = ImageSourceTestData.COMPLETE_IMAGE_SOURCE,
+		fixedSize = SizeTestData.COMPLETE_SIZE,
 		baseProperties = BaseViewPropertiesTestData.COMPLETE_BASE_VIEW_PROPERTIES
 	)
 }
